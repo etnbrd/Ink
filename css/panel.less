@@ -1,0 +1,123 @@
+
+/* Panel */
+
+#panel {
+  background-color: @dark;
+  font-weight: normal;
+  height: 42px;
+}
+
+#panel.lock-screen,
+#panel.unlock-screen,
+#panel.login-screen {
+  background-color: transparent;
+}
+
+#panelLeft, #panelCenter {
+  spacing: 4px;
+}
+
+#panelLeft:ltr {
+  padding-right: 4px;
+}
+
+#panelLeft:rtl {
+  padding-left: 4px;
+}
+
+#panelRight:ltr {
+  padding-left: 4px;
+}
+
+#panelRight:rtl {
+  padding-right: 4px;
+}
+
+.panel-corner {
+  -panel-corner-radius: 0px;
+}
+
+#appMenu {
+  spinner-image: url("assets/process-working.svg");
+  spacing: 40px;
+  padding: 0 10px;
+}
+
+/* used for the app menu header only */
+.label-shadow {
+  color: transparent;
+}
+
+.panel-button #appMenuIcon {
+  width: 0px;
+}
+
+.panel-button:active #appMenuIcon,
+.panel-button:checked #appMenuIcon,
+.panel-button:focus #appMenuIcon {
+  app-icon-bottom-clip: 2px;
+}
+
+.app-menu-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.panel-button {
+  -natural-hpadding: 12px;
+  -minimum-hpadding: 6px;
+  font-weight: normal;
+  color: @text;
+  transition-duration: 100ms;
+}
+
+#panel.unlock-screen .panel-button,
+#panel.lock-screen .panel-button,
+#panel.login-screen .panel-button {
+  color: @text;
+}
+
+#panel.unlock-screen .panel-button:hover,
+#panel.lock-screen .panel-button:hover,
+#panel.login-screen .panel-button:hover,
+#panel.unlock-screen .panel-button:active,
+#panel.lock-screen .panel-button:active,
+#panel.login-screen .panel-button:active,
+#panel.unlock-screen .panel-button:focus,
+#panel.lock-screen .panel-button:focus,
+#panel.login-screen .panel-button:focus {
+  // color: @text;
+}
+
+.panel-button:hover,
+.panel-button:active,
+.panel-button:overview,
+.panel-button:focus {
+  color: @high;
+}
+
+.panel-menu {
+  -boxpointer-gap: 10px;
+}
+
+.panel-status-indicators-box,
+.panel-status-menu-box {
+  spacing: 2px;
+}
+
+.system-status-icon {
+  icon-size: 1.0em;
+  padding: 0 10px;
+}
+
+.aggregate-menu {
+  width: 400px;
+}
+
+.aggregate-menu .popup-menu-icon {
+  padding: 0 4px;
+}
+
+.system-switch-user-submenu-icon {
+  icon-size: 40px;
+}

@@ -8,8 +8,8 @@
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
     -arrow-border-radius: 2px;
-    -arrow-background-color: rgb(23, 23, 23);
-    -arrow-border-color: rgb(0, 0, 0);
+    -arrow-background-color: @dark;
+    -arrow-border-color: @darken;
     -arrow-border-width: 1px;
     -arrow-base: 20px;
     -arrow-rise: 10px;
@@ -20,19 +20,16 @@
 }
 
 .unicode-arrow {
-    font-size: 120%;
+    font-size: 80%;
+    color: @texten;
 }
 
 .popup-submenu-menu-item:open {
-    background-color: rgb(27, 27, 27);
+    background-color: darken(@dark, 2%);
 }
 
 .popup-sub-menu {
-    background-color: rgb(27, 27, 27);
-/*    background-gradient-start: rgba(80,80,80,0.3);
-    background-gradient-end: rgba(80,80,80,0.4);
-    background-gradient-direction: vertical;
-    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.9);*/
+    background-color: darken(@dark, 4%);
 }
 
 .popup-sub-menu:scrolled .popup-menu-item:ltr {
@@ -43,19 +40,6 @@
     padding-left: 0em;
 }
 
-.popup-sub-menu StScrollBar {
-    padding: 4px;
-}
-
-.popup-sub-menu StScrollBar StBin#trough {
-    border-width: 0px;
-}
-
-.popup-sub-menu StScrollBar StBin#vhandle {
-    background-color: #4c4c4c;
-    border-width: 0px;
-}
-
 /* The remaining popup-menu sizing is all done in ems, so that if you
  * override .popup-menu.font-size, everything else will scale with it.
  */
@@ -64,7 +48,7 @@
 }
 
 .popup-menu-item {
-    spacing: 12px;
+    spacing: 10px;
 }
 
 .popup-menu-item:ltr {
@@ -76,20 +60,22 @@
 }
 
 .popup-menu-item:active {
-    background-color: rgb(33, 33, 33);
+    background-color: @light;
 }
 
 .popup-menu-item:insensitive {
-    color: #9f9f9f;
+    color: #texten;
 }
 
+/* TODO */
 .popup-image-menu-item {
+    border: 1px solid red;
 }
 
 
-/* TODO how to really make it 1px height */
+/* TODO how to really make it 1px height, see calendar popup vertical separator to see the difference */
 .popup-separator-menu-item {
-/*    -gradient-height: 1px;
+/*  -gradient-height: 1px;
     -gradient-start: rgb(255,255,255);
     -gradient-end: rgb(255,255,255);
     -margin-horizontal: 10px;*/
@@ -98,16 +84,20 @@
 }
 
 .popup-alternating-menu-item:alternate {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .popup-status-menu-item {
     font-weight: normal;
-    color: #999;
+    color: @texten;
 }
 
-.popup-inactive-menu-item, .popup-inactive-menu-item:insensitive {
-    color: white;
+.popup-inactive-menu-item {
+    color: @text;
+}
+
+.popup-inactive-menu-item:insensitive {
+    color: @texten;
 }
 
 .popup-menu-icon {

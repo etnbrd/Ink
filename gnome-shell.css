@@ -1,19 +1,12 @@
-@import "css/elements.css";
-@import "css/popup.css";
 @import "css/network.css";
-@import "css/buttons.css";
-@import "css/entries.css";
-@import "css/panel.css";
 @import "css/overview.css";
 @import "css/looking-glass.css";
-@import "css/calendar.css";
 @import "css/message-tray.css";
 @import "css/app-switcher.css";
 @import "css/workspace-switcher.css";
-@import "css/modal-dialog.css";
+@import "css/modal-dialogs.css";
 @import "css/keyboard.css";
 @import "css/login-dialog.css";
-@import "css/screen-shield.css";
 /* Copyright 2009, Red Hat, Inc.
  *
  * Portions adapted from Mx's data/style/default.css
@@ -32,17 +25,12 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
  */
-/*
-    Background color : rgb(23, 23, 23);
-    Border color: rgb(0, 0, 0);
-
-    Color 1: rgb(2, 196, 251);
-*/
+/* Colors */
 /* Text Styles */
 /* default text style */
 stage {
-  font-family: Roboto, sans-serif;
-  font-size: 10pt;
+  font-family: "Roboto Light", sans-serif;
+  font-size: 11pt;
   color: white;
 }
 /* links */
@@ -67,6 +55,614 @@ stage {
 .grid-search-result .overview-icon {
   font-size: 9pt;
   font-weight: bold;
+}
+/* Scroll Bars */
+StScrollView.vfade,
+StScrollView.hfade {
+  -st-hfade-offset: 68px;
+}
+StScrollView StScrollBar {
+  min-width: 8px;
+  min-height: 14px;
+}
+StScrollBar {
+  padding: 4px;
+}
+StScrollBar StBin#trough {
+  background-color: transparent;
+  border-radius: 0px;
+}
+StScrollBar StButton#vhandle,
+StScrollBar StButton#hhandle {
+  background-color: #212121;
+  border: 0px solid transparent;
+  border-radius: 0px;
+}
+StScrollBar StButton#vhandle:hover,
+StScrollBar StButton#hhandle:hover {
+  background-color: #3b3b3b;
+}
+StScrollBar StButton#vhandle:active,
+StScrollBar StButton#hhandle:active {
+  background-color: #02c4fb;
+}
+/* Check Boxes */
+.check-box StBoxLayout {
+  spacing: .8em;
+}
+.check-box StBin {
+  width: 24px;
+  height: 22px;
+  background-image: url("assets/checkbox-off.svg");
+}
+.check-box:focus StBin {
+  background-image: url("assets/checkbox-off-focused.svg");
+}
+.check-box:checked StBin {
+  background-image: url("assets/checkbox.svg");
+}
+.check-box:focus:checked StBin {
+  background-image: url("assets/checkbox-focused.svg");
+}
+/* Slider */
+.slider {
+  height: 2px;
+  -slider-height: 2px;
+  -slider-background-color: #3c3c3c;
+  -slider-border-color: transparent;
+  -slider-active-background-color: #02c4fb;
+  -slider-active-border-color: transparent;
+  -slider-border-width: 0px;
+  -slider-handle-radius: 4px;
+}
+/* Switches */
+.toggle-switch {
+  width: 65px;
+  height: 22px;
+}
+.toggle-switch-us {
+  /*background-image: url("assets/toggle-off-us.svg");*/
+  background-size: contain;
+}
+.toggle-switch-us:checked {
+  /*background-image: url("assets/toggle-on-us.svg");*/
+  background-size: contain;
+}
+.toggle-switch-intl {
+  /*background-image: url("assets/toggle-off-intl.svg");*/
+  background-size: contain;
+}
+.toggle-switch-intl:checked {
+  /*background-image: url("assets/toggle-on-intl.svg");*/
+  background-size: contain;
+}
+/* PopupMenu */
+.popup-menu-ornament {
+  text-align: right;
+  width: 1em;
+}
+.popup-menu-boxpointer,
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 2px;
+  -arrow-background-color: #171717;
+  -arrow-border-color: #000000;
+  -arrow-border-width: 1px;
+  -arrow-base: 20px;
+  -arrow-rise: 10px;
+}
+.popup-menu {
+  min-width: 200px;
+}
+.unicode-arrow {
+  font-size: 80%;
+  color: #787878;
+}
+.popup-submenu-menu-item:open {
+  background-color: #121212;
+}
+.popup-sub-menu {
+  background-color: #0d0d0d;
+}
+.popup-sub-menu:scrolled .popup-menu-item:ltr {
+  padding-right: 0em;
+}
+.popup-sub-menu:scrolled .popup-menu-item:rtl {
+  padding-left: 0em;
+}
+/* The remaining popup-menu sizing is all done in ems, so that if you
+ * override .popup-menu.font-size, everything else will scale with it.
+ */
+.popup-menu-content {
+  padding: 1em 0em;
+}
+.popup-menu-item {
+  spacing: 10px;
+}
+.popup-menu-item:ltr {
+  padding: .4em 1.75em .4em 0em;
+}
+.popup-menu-item:rtl {
+  padding: .4em 0em .4em 1.75em;
+}
+.popup-menu-item:active {
+  background-color: #212121;
+}
+.popup-menu-item:insensitive {
+  color: #texten;
+}
+/* TODO */
+.popup-image-menu-item {
+  border: 1px solid red;
+}
+/* TODO how to really make it 1px height, see calendar popup vertical separator to see the difference */
+.popup-separator-menu-item {
+  /*  -gradient-height: 1px;
+    -gradient-start: rgb(255,255,255);
+    -gradient-end: rgb(255,255,255);
+    -margin-horizontal: 10px;*/
+  /*background: rgb(33, 33, 33);*/
+}
+.popup-alternating-menu-item:alternate {
+  font-weight: normal;
+}
+.popup-status-menu-item {
+  font-weight: normal;
+  color: #787878;
+}
+.popup-inactive-menu-item {
+  color: #ffffff;
+}
+.popup-inactive-menu-item:insensitive {
+  color: #787878;
+}
+.popup-menu-icon {
+  icon-size: 1.09em;
+}
+/* Buttons */
+.candidate-page-button,
+.notification-button,
+.notification-icon-button,
+.hotplug-notification-item,
+.hotplug-resident-eject-button,
+.modal-dialog-button,
+.app-view-control,
+.system-menu-action {
+  background-color: #212121;
+  border-radius: 2px;
+  font-weight: normal;
+}
+.candidate-page-button:hover,
+.notification-button:hover,
+.notification-icon-button:hover,
+.hotplug-notification-item:hover,
+.hotplug-resident-eject-button:hover,
+.modal-dialog-button:hover,
+.system-menu-action:hover,
+.notification-button:focus,
+.notification-icon-button:focus,
+.hotplug-notification-item:focus,
+.modal-dialog-button:focus,
+.app-view-control:focus,
+.system-menu-action:focus {
+  color: #02c4fb;
+}
+.app-view-control:first-child:ltr:focus,
+.app-view-control:last-child:rtl:focus {
+  border-right-width: 1px;
+}
+.candidate-page-button:active,
+.candidate-page-button:pressed,
+.notification-button:active,
+.notification-icon-button:active,
+.hotplug-notification-item:active,
+.hotplug-resident-eject-button:active,
+.modal-dialog-button:active,
+.modal-dialog-button:pressed,
+.app-view-control:checked,
+.system-menu-action:active {
+  background-color: #02c4fb;
+  color: #ffffff;
+}
+.candidate-page-button:insensitive,
+.notification-button:insensitive,
+.notification-icon-button:insensitive,
+.modal-dialog-button:insensitive {
+  color: #787878;
+  background-gradient-direction: none;
+  background-color: #080808;
+}
+.system-menu-action {
+  padding: 14px;
+}
+.system-menu-action > StIcon {
+  icon-size: 20px;
+}
+/* Entries */
+#searchEntry,
+.login-dialog StEntry,
+.notification StEntry,
+.modal-dialog StEntry,
+.run-dialog-entry {
+  color: #787878;
+  caret-color: #787878;
+  font-size: 10pt;
+  caret-size: 1px;
+  selected-color: #171717;
+  padding: 4px 12px;
+  border: 1px solid transparent;
+  box-shadow: inset 0 -1px 0 0 #787878;
+  transition-duration: 300ms;
+}
+#searchEntry:hover,
+.login-dialog StEntry:hover,
+.notification StEntry:hover,
+.modal-dialog StEntry:hover,
+#searchEntry:focus,
+.login-dialog StEntry:focus,
+.notification StEntry:focus,
+.modal-dialog StEntry:focus {
+  color: #ffffff;
+  caret-color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: inset 0 -1px 0 0 #02c4fb;
+}
+.prompt-dialog-password-entry .capslock-warning,
+.login-dialog-prompt-entry .capslock-warning {
+  icon-size: 16px;
+  warning-color: #fb0260;
+  padding: 0 4px;
+}
+/* TODO */
+.login-dialog StEntry:insensitive,
+.modal-dialog StEntry:insensitive {
+  border-color: #666666;
+  color: #9f9f9f;
+  border: 2px solid #9f9f9f;
+  background-gradient-direction: none;
+  background-color: rgba(102, 102, 102, 0.15);
+  box-shadow: inset 0 0 #000000;
+}
+/* Panel */
+#panel {
+  background-color: #171717;
+  font-weight: normal;
+  height: 42px;
+}
+#panel.lock-screen,
+#panel.unlock-screen,
+#panel.login-screen {
+  background-color: transparent;
+}
+#panelLeft,
+#panelCenter {
+  spacing: 4px;
+}
+#panelLeft:ltr {
+  padding-right: 4px;
+}
+#panelLeft:rtl {
+  padding-left: 4px;
+}
+#panelRight:ltr {
+  padding-left: 4px;
+}
+#panelRight:rtl {
+  padding-right: 4px;
+}
+.panel-corner {
+  -panel-corner-radius: 0px;
+}
+#appMenu {
+  spinner-image: url("assets/process-working.svg");
+  spacing: 40px;
+  padding: 0 10px;
+}
+/* used for the app menu header only */
+.label-shadow {
+  color: transparent;
+}
+.panel-button #appMenuIcon {
+  width: 0px;
+}
+.panel-button:active #appMenuIcon,
+.panel-button:checked #appMenuIcon,
+.panel-button:focus #appMenuIcon {
+  app-icon-bottom-clip: 2px;
+}
+.app-menu-icon {
+  width: 24px;
+  height: 24px;
+}
+.panel-button {
+  -natural-hpadding: 12px;
+  -minimum-hpadding: 6px;
+  font-weight: normal;
+  color: #ffffff;
+  transition-duration: 100ms;
+}
+#panel.unlock-screen .panel-button,
+#panel.lock-screen .panel-button,
+#panel.login-screen .panel-button {
+  color: #ffffff;
+}
+.panel-button:hover,
+.panel-button:active,
+.panel-button:overview,
+.panel-button:focus {
+  color: #02c4fb;
+}
+.panel-menu {
+  -boxpointer-gap: 10px;
+}
+.panel-status-indicators-box,
+.panel-status-menu-box {
+  spacing: 2px;
+}
+.system-status-icon {
+  icon-size: 1.0em;
+  padding: 0 10px;
+}
+.aggregate-menu {
+  width: 400px;
+}
+.aggregate-menu .popup-menu-icon {
+  padding: 0 4px;
+}
+.system-switch-user-submenu-icon {
+  icon-size: 40px;
+}
+/* Calendar popup */
+.calendar-vertical-separator {
+  width: 1px;
+  background: #000000;
+}
+#calendarPopup .calendar {
+  padding: 10px;
+}
+.calendar {
+  padding: .4em 1.75em .8em 1.75em;
+  spacing-rows: 0px;
+  spacing-columns: 0px;
+}
+.calendar-month-label {
+  color: #ffffff;
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+/* TODO */
+.calendar-month-label:focus {
+  background-color: #999999;
+}
+.calendar-change-month-back:hover,
+.calendar-change-month-back:focus,
+.calendar-change-month-back:active,
+.calendar-change-month-forward:hover,
+.calendar-change-month-forward:focus,
+.calendar-change-month-forward:active {
+  color: #02c4fb;
+}
+.calendar-change-month-back {
+  width: 18px;
+  height: 12px;
+  background-image: url("assets/calendar-arrow-left.svg");
+  border-radius: 0px;
+}
+.calendar-change-month-back:rtl {
+  background-image: url("assets/calendar-arrow-right.svg");
+}
+.calendar-change-month-forward {
+  width: 18px;
+  height: 12px;
+  background-image: url("assets/calendar-arrow-right.svg");
+  border-radius: 0px;
+}
+.calendar-change-month-forward:rtl {
+  background-image: url("assets/calendar-arrow-left.svg");
+}
+.datemenu-date-label {
+  padding: .4em 1.7em;
+  text-align: center;
+  color: #ffffff;
+}
+.datemenu-date-label:focus {
+  background-color: #999999;
+}
+.calendar-day-base {
+  font-size: 9pt;
+  text-align: center;
+  width: 2.4em;
+  height: 2.4em;
+}
+.calendar-day-base:hover,
+.calendar-day-base:focus {
+  background-color: #777777;
+}
+.calendar-day-base:active {
+  font-size: 9pt;
+  background-color: #555555;
+  color: white;
+}
+.calendar-day-heading {
+  color: #888a85;
+  padding-top: .2em;
+  height: 1.7em;
+}
+.calendar-week-number {
+  color: #babdb6;
+  font-weight: bold;
+}
+/* Hack used in lieu of border-collapse - see calendar.js */
+.calendar-day {
+  border: 0px solid #505050;
+  color: #babdb6;
+  border-top-width: 0;
+  border-left-width: 0;
+}
+.calendar-day-top {
+  border-top-width: 0px;
+}
+.calendar-day-left {
+  border-left-width: 0px;
+}
+.calendar-nonwork-day {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+.calendar-today {
+  text-shadow: black 0px 2px 2px;
+  font-weight: bold;
+}
+.calendar-day-with-events {
+  font-weight: bold;
+  color: white;
+}
+.calendar-other-month-day {
+  color: #333333;
+}
+.events-table {
+  width: 320px;
+  spacing-columns: 6pt;
+  padding: 0 1.4em;
+}
+.events-table:ltr {
+  padding-right: 1.9em;
+}
+.events-table:rtl {
+  padding-left: 1.9em;
+}
+.events-day-header {
+  color: #787878;
+  padding-left: 0.4em;
+  padding-top: 1.2em;
+  padding-bottom: 0.3em;
+  border: 1px solid transparent;
+  /* I don't know why but whithout this, the box-shadow doesn't appear, and it would be too simple to use only the border : so it doesn't work either to use only the border */
+  box-shadow: inset 0 -1px 0 0 #787878;
+}
+.events-day-header:first-child {
+  padding-top: 0;
+}
+.events-day-header:rtl {
+  padding-left: 0;
+  padding-right: 0.4em;
+}
+.events-day-dayname {
+  color: #999999;
+  text-align: left;
+  min-width: 20px;
+}
+.events-day-dayname:rtl {
+  text-align: right;
+}
+.events-day-time {
+  color: #fff;
+  text-align: right;
+}
+.events-day-time:rtl {
+  text-align: left;
+}
+.events-day-task {
+  color: #999999;
+  padding-left: 8pt;
+}
+.events-day-task:rtl {
+  padding-left: 0px;
+  padding-right: 8pt;
+}
+/* Screen shield */
+#screenShieldNotifications {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.screen-shield-background {
+  background: #000000;
+  /*box-shadow: 0px 4px 8px rgba(0,0,0,0.9);*/
+}
+#lockDialogGroup {
+  background: #171717;
+}
+.screen-shield-arrows {
+  padding-bottom: 3em;
+}
+.screen-shield-arrows Gjs_Arrow {
+  color: #text;
+  width: 80px;
+  height: 48px;
+  -arrow-thickness: 12px;
+  /*-arrow-shadow: 0 1px 1px rgba(0,0,0,0.4);*/
+}
+.screen-shield-contents-box {
+  spacing: 48px;
+}
+.screen-shield-clock {
+  color: #ffffff;
+  /*text-shadow: 0px 1px 2px rgba(0,0,0,0.6);*/
+  font-family: Roboto Thin;
+  font-weight: 100;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+.screen-shield-clock-time {
+  font-size: 72pt;
+  /*text-shadow: 0px 2px 2px rgba(0,0,0,0.4);*/
+}
+.screen-shield-clock-date {
+  font-size: 28pt;
+}
+#screenShieldNotifications {
+  max-height: 500px;
+  padding: 12px;
+}
+.screen-shield-notifications-box {
+  spacing: 12px;
+  width: 30em;
+}
+.screen-shield-notification-source {
+  padding: 3px 6px;
+  spacing: 5px;
+}
+.screen-shield-notification-label {
+  font-weight: bold;
+  padding: 0px 0px 0px 12px;
+}
+.screen-shield-notification-count-text {
+  padding: 0px 0px 0px 12px;
+}
+/* Remove background from notifications, otherwise
+   opacity is doubled and they look darker
+*/
+.screen-shield-notifications-box .notification {
+  background-color: transparent;
+}
+/* Override padding on resident notifications, since
+   the notifications box has its own spacing
+*/
+.screen-shield-notifications-box .summary-notification-stack-scrollview {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#screenShieldNotifications .notification-button,
+#screenShieldNotifications .notification-icon-button {
+  border: 1px rgba(255, 255, 255, 0.5);
+}
+#screenShieldNotifications StScrollBar StBin#trough {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#screenShieldNotifications StScrollBar StButton#vhandle,
+#screenShieldNotifications StScrollBar StButton#hhandle {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+}
+#screenShieldNotifications StScrollBar StButton#vhandle:hover,
+#screenShieldNotifications StScrollBar StButton#hhandle {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#screenShieldNotifications StScrollBar StButton#vhandle:active,
+#screenShieldNotifications StScrollBar StButton#hhandle {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.input-source-switcher-symbol {
+  font-size: 34pt;
+  width: 96px;
+  height: 96px;
 }
 /* Common radii */
 #searchEntry,
@@ -331,6 +927,9 @@ stage {
 }
 .url-highlighter {
   link-color: #ccccff;
+}
+.screencast-indicator {
+  color: #ff0000;
 }
 /* OSD */
 .osd-window {

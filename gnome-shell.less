@@ -17,13 +17,28 @@
  * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
+/* Colors */
+
+@dark: rgb(23, 23, 23);
+@darken: rgb(0, 0, 0);
+
+@light: rgb(33, 33, 33);
+@lighten: lighten(@light, 10%);
+
+@high: rgb(2, 196, 251);
+
+@warn: rgb(251, 2, 96);
+
+@text: rgb(255, 255, 255);
+@texten: rgb(120, 120, 120);
+
 
 /* Text Styles */
 
 /* default text style */
 stage {
-    font-family: Roboto, sans-serif;
-    font-size: 10pt;
+    font-family: "Roboto Light", sans-serif;
+    font-size: 11pt;
     color: white;
 }
 
@@ -54,23 +69,23 @@ stage {
     font-weight: bold;
 }
 
-@import "css/elements.css";
-@import "css/popup.css";
+@import "css/elements";
+@import "css/popup";
 @import "css/network.css";
-@import "css/buttons.css";
-@import "css/entries.css";
-@import "css/panel.css";
+@import "css/buttons";
+@import "css/entries";
+@import "css/panel";
 @import "css/overview.css";
 
 @import "css/looking-glass.css";
-@import "css/calendar.css";
+@import "css/calendar";
 @import "css/message-tray.css";
 @import "css/app-switcher.css";
 @import "css/workspace-switcher.css";
 @import "css/modal-dialogs.css";
 @import "css/keyboard.css";
 @import "css/login-dialog.css";
-@import "css/screen-shield.css";
+@import "css/screen-shield.less";
 
 
 
@@ -402,6 +417,10 @@ stage {
 
 .url-highlighter {
     link-color: #ccccff;
+}
+
+.screencast-indicator {
+    color: #ff0000;
 }
 
 /* OSD */

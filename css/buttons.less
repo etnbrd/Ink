@@ -6,12 +6,10 @@
 .hotplug-notification-item,
 .hotplug-resident-eject-button,
 .modal-dialog-button,
-.app-view-control {
-    background: rgb(45, 45, 45);
+.app-view-control,
+.system-menu-action {
+    background-color: @light;
     border-radius: 2px;
-}
-
-.modal-dialog-button {
     font-weight: normal;
 }
 
@@ -20,17 +18,15 @@
 .notification-icon-button:hover,
 .hotplug-notification-item:hover,
 .hotplug-resident-eject-button:hover,
-.modal-dialog-button:hover {
-    background-gradient-start: rgba(255, 255, 255, 0.3);
-    background-gradient-end: rgba(255, 255, 255, 0.1);
-}
-
+.modal-dialog-button:hover,
+.system-menu-action:hover,
 .notification-button:focus,
 .notification-icon-button:focus,
 .hotplug-notification-item:focus,
 .modal-dialog-button:focus,
-.app-view-control:focus {
-    border-width: 2px;
+.app-view-control:focus,
+.system-menu-action:focus {
+    color: @high;
 }
 
 .app-view-control:first-child:ltr:focus,
@@ -46,17 +42,25 @@
 .hotplug-resident-eject-button:active,
 .modal-dialog-button:active,
 .modal-dialog-button:pressed,
-.app-view-control:checked {
-    background-gradient-start: rgba(255, 255, 255, 0);
-    background-gradient-end: rgba(255, 255, 255, 0.2);
+.app-view-control:checked,
+.system-menu-action:active {
+    background-color: @high;
+    color: @text;
 }
 
 .candidate-page-button:insensitive,
 .notification-button:insensitive,
 .notification-icon-button:insensitive,
 .modal-dialog-button:insensitive {
-    border-color: #666666;
-    color: #9f9f9f;
+    color: @texten;
     background-gradient-direction: none;
-    background-color: rgba(102, 102, 102, 0.15);
+    background-color: darken(@light, 10%);
+}
+
+.system-menu-action {
+  padding: 14px;
+
+  & > StIcon {
+    icon-size: 20px;
+  }
 }
