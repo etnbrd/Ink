@@ -1,0 +1,121 @@
+
+/* Overview */
+
+#overview {
+    spacing: 24px;
+}
+
+.overview-controls {
+    padding-bottom: 32px;
+}
+
+.workspace-thumbnails {
+    spacing: 11px;
+    visible-width: 32px; /* Amount visible before hovering */
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-right: 0px;
+    border-radius: 2px 0px 0px 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 11px 7px 11px 11px;
+}
+
+.workspace-thumbnails:rtl {
+    border-right: 1px;
+    border-left: 0px;
+    border-radius: 0px 2px 2px 0px;
+    padding: 11px 11px 11px 7px;
+}
+
+.workspace-thumbnail-indicator {
+    border: 4px solid rgba(255,255,255,0.7);
+    border-radius: 2px;
+    padding: 1px;
+}
+
+.window-caption {
+    spacing: 25px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 2px;
+    padding: 4px 12px;
+    -shell-caption-spacing: 12px;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.window-caption:hover {
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.window-close, .notification-close {
+    background-image: url("assets/close-window.svg");
+    background-size: 32px;
+    height: 32px;
+    width: 32px;
+}
+
+.window-close {
+    -shell-close-overlap: 16px;
+}
+
+.window-clone-border {
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+.notification-close {
+    /* we start out in the top right of the
+     * notification, inset.
+     *
+     * center is 32px/2 = 16px
+     *
+     * adjust left 2px
+     * adjust down 8px */
+
+    -shell-close-overlap-x: 14px;
+    -shell-close-overlap-y: -12px;
+}
+
+.notification-close:rtl {
+    /* as above, but starting out in the top left of the
+     * notification. */
+
+    -shell-close-overlap-x: -14px;
+}
+
+.window-close:rtl {
+    -st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.window-picker {
+    -horizontal-spacing: 32px;
+    -vertical-spacing: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 48px;
+}
+
+.window-picker.external-monitor {
+    padding: 32px;
+}
+
+.messages-indicator {
+    color: #999999;
+    height: 32px;
+}
+
+.messages-indicator-contents {
+    spacing: 12px;
+    padding-bottom: 12px;
+}
+
+.messages-indicator-contents:hover {
+    color: white;
+    text-shadow: black 0px 2px 2px;
+}
+
+.messages-indicator-highlight {
+    background-gradient-start: transparent;
+    background-gradient-end: #999999;
+    background-gradient-direction: vertical;
+
+    height: 6px;
+}

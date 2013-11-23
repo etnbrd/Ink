@@ -1,0 +1,42 @@
+/* Workspace Switcher */
+.workspace-switcher-group {
+    padding: 12px;
+}
+
+.workspace-switcher-container {
+    background: rgba(0,0,0,0.8);
+    border: 1px solid rgba(128,128,128,0.40);
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.workspace-switcher {
+    background: transparent;
+    border: 0px;
+    border-radius: 0px;
+    padding: 0px;
+    spacing: 8px;
+}
+
+.ws-switcher-active-up {
+    height: 100px;
+    border: 0px;
+    background: rgba(255,255,255,0.5);
+    background-image: url("assets/ws-switch-arrow-up.png");
+    border-radius: 2px;
+}
+
+.ws-switcher-active-down {
+    height: 100px;
+    border: 0px;
+    background: rgba(255,255,255,0.5);
+    background-image: url("assets/ws-switch-arrow-down.png");
+    border-radius: 2px;
+}
+
+.ws-switcher-box {
+    height: 96px;
+    border: 2px solid rgba(85,85,85,0.5);
+    background: transparent;
+    border-radius: 2px;
+}

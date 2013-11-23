@@ -1,0 +1,108 @@
+
+/* Scroll Bars */
+
+StScrollBar {
+    padding: 0px;
+}
+
+StScrollView.vfade {
+    -st-vfade-offset: 68px;
+}
+
+StScrollView.hfade {
+    -st-hfade-offset: 68px;
+}
+
+StScrollView StScrollBar {
+    min-width: 10px;
+    min-height: 14px;
+}
+
+StScrollBar StBin#trough {
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 2px;
+}
+
+StScrollBar StButton#vhandle {
+    background-color: #5d6464;
+    border: 2px solid #242424;
+    border-radius: 2px;
+}
+
+StScrollBar StButton#hhandle {
+    background-color: #5d6464;
+    border: 2px solid #242424;
+    border-radius: 2px;
+}
+
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:hover {
+    background-color: #777d7c;
+}
+
+StScrollBar StButton#hhandle:active,
+StScrollBar StButton#vhandle:active {
+    background-color: #3465a4;
+}
+
+
+/* Check Boxes */
+
+.check-box StBoxLayout {
+    spacing: .8em;
+}
+
+.check-box StBin {
+    width: 24px;
+    height: 22px;
+    background-image: url("assets/checkbox-off.svg");
+}
+
+.check-box:focus StBin {
+    background-image: url("assets/checkbox-off-focused.svg");
+}
+
+.check-box:checked StBin {
+    background-image: url("assets/checkbox.svg");
+}
+
+.check-box:focus:checked StBin {
+    background-image: url("assets/checkbox-focused.svg");
+}
+
+/* Slider */
+
+.slider {
+    height: 2px;
+    -slider-height: 2px;
+    -slider-background-color: rgb(60, 60, 60);
+    -slider-border-color: transparent;
+    -slider-active-background-color: rgb(2, 196, 251);
+    -slider-active-border-color: #1f6dbc;
+    -slider-border-width: 0px;
+    -slider-handle-radius: 4px;
+}
+
+/* Switches */
+.toggle-switch {
+    width: 65px;
+    height: 22px;
+}
+
+.toggle-switch-us {
+    background-image: url("assets/toggle-off-us.svg");
+    background-size: contain;
+}
+.toggle-switch-us:checked {
+    background-image: url("assets/toggle-on-us.svg");
+    background-size: contain;
+}
+
+.toggle-switch-intl {
+    background-image: url("assets/toggle-off-intl.svg");
+    background-size: contain;
+}
+.toggle-switch-intl:checked {
+    background-image: url("assets/toggle-on-intl.svg");
+    background-size: contain;
+}
