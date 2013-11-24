@@ -188,7 +188,7 @@ StScrollBar StButton#hhandle:active {
   background-color: #212121;
 }
 .popup-menu-item:insensitive {
-  color: #texten;
+  color: #787878;
 }
 /* TODO */
 .popup-image-menu-item {
@@ -414,7 +414,7 @@ StScrollBar StButton#hhandle:active {
 /* Calendar popup */
 .calendar-vertical-separator {
   width: 1px;
-  background: #000000;
+  background: #212121;
 }
 #calendarPopup .calendar {
   padding: 10px;
@@ -423,41 +423,36 @@ StScrollBar StButton#hhandle:active {
   padding: .4em 1.75em .8em 1.75em;
   spacing-rows: 0px;
   spacing-columns: 0px;
+  font-size: 10pt;
 }
 .calendar-month-label {
   color: #ffffff;
-  padding-bottom: 8px;
-  padding-top: 8px;
+  padding: 8px 50px;
 }
-/* TODO */
 .calendar-month-label:focus {
-  background-color: #999999;
+  background-color: #212121;
 }
-.calendar-change-month-back:hover,
-.calendar-change-month-back:focus,
-.calendar-change-month-back:active,
-.calendar-change-month-forward:hover,
-.calendar-change-month-forward:focus,
-.calendar-change-month-forward:active {
-  color: #02c4fb;
-}
-.calendar-change-month-back {
-  width: 18px;
-  height: 12px;
-  background-image: url("assets/calendar-arrow-left.svg");
-  border-radius: 0px;
-}
-.calendar-change-month-back:rtl {
-  background-image: url("assets/calendar-arrow-right.svg");
-}
+.calendar-change-month-back,
 .calendar-change-month-forward {
   width: 18px;
   height: 12px;
-  background-image: url("assets/calendar-arrow-right.svg");
-  border-radius: 0px;
+  padding: 0 20px;
 }
+.calendar-change-month-back:hover,
+.calendar-change-month-forward:hover,
+.calendar-change-month-back:focus,
+.calendar-change-month-forward:focus,
+.calendar-change-month-back:active,
+.calendar-change-month-forward:active {
+  background-color: #212121;
+}
+.calendar-change-month-back,
 .calendar-change-month-forward:rtl {
   background-image: url("assets/calendar-arrow-left.svg");
+}
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+  background-image: url("assets/calendar-arrow-right.svg");
 }
 .datemenu-date-label {
   padding: .4em 1.7em;
@@ -465,61 +460,53 @@ StScrollBar StButton#hhandle:active {
   color: #ffffff;
 }
 .datemenu-date-label:focus {
-  background-color: #999999;
+  background-color: #212121;
 }
 .calendar-day-base {
-  font-size: 9pt;
   text-align: center;
   width: 2.4em;
   height: 2.4em;
 }
 .calendar-day-base:hover,
 .calendar-day-base:focus {
-  background-color: #777777;
+  background-color: #212121;
+  color: white;
 }
 .calendar-day-base:active {
-  font-size: 9pt;
-  background-color: #555555;
+  background-color: #212121;
   color: white;
 }
 .calendar-day-heading {
-  color: #888a85;
+  color: #787878;
   padding-top: .2em;
   height: 1.7em;
 }
 .calendar-week-number {
-  color: #babdb6;
-  font-weight: bold;
+  font-size: 8pt;
+  text-align: center;
+  padding: 0;
+  color: #787878;
 }
-/* Hack used in lieu of border-collapse - see calendar.js */
 .calendar-day {
-  border: 0px solid #505050;
-  color: #babdb6;
-  border-top-width: 0;
-  border-left-width: 0;
-}
-.calendar-day-top {
-  border-top-width: 0px;
-}
-.calendar-day-left {
-  border-left-width: 0px;
+  color: #787878;
 }
 .calendar-nonwork-day {
-  background-color: rgba(128, 128, 128, 0.1);
+  background-color: #171717;
 }
-.calendar-today {
-  text-shadow: black 0px 2px 2px;
-  font-weight: bold;
+.calendar-today,
+.calendar-today:hover,
+.calendar-today:focus,
+.calendar-today:active {
+  color: #02c4fb;
 }
 .calendar-day-with-events {
-  font-weight: bold;
-  color: white;
+  color: #ffffff;
 }
 .calendar-other-month-day {
-  color: #333333;
+  color: #323232;
 }
 .events-table {
-  width: 320px;
+  width: 420px;
   spacing-columns: 6pt;
   padding: 0 1.4em;
 }
@@ -531,41 +518,47 @@ StScrollBar StButton#hhandle:active {
 }
 .events-day-header {
   color: #787878;
-  padding-left: 0.4em;
-  padding-top: 1.2em;
-  padding-bottom: 0.3em;
+  padding: 1.2em 0 0.3em 0;
+  /* We need both the border and the box-shadow to make the separator.
+  I don't why though */
   border: 1px solid transparent;
-  /* I don't know why but whithout this, the box-shadow doesn't appear, and it would be too simple to use only the border : so it doesn't work either to use only the border */
-  box-shadow: inset 0 -1px 0 0 #787878;
+  box-shadow: inset 0 -1px 0 0 #212121;
 }
 .events-day-header:first-child {
   padding-top: 0;
 }
+.events-day-header:ltr {
+  padding-left: 0.4em;
+}
 .events-day-header:rtl {
-  padding-left: 0;
   padding-right: 0.4em;
 }
 .events-day-dayname {
-  color: #999999;
-  text-align: left;
+  color: #787878;
   min-width: 20px;
+}
+.events-day-dayname:ltr {
+  text-align: left;
 }
 .events-day-dayname:rtl {
   text-align: right;
 }
 .events-day-time {
-  color: #fff;
+  color: #ffffff;
+}
+.events-day-time:ltr {
   text-align: right;
 }
 .events-day-time:rtl {
   text-align: left;
 }
 .events-day-task {
-  color: #999999;
+  color: #787878;
+}
+.events-day-task:ltr {
   padding-left: 8pt;
 }
 .events-day-task:rtl {
-  padding-left: 0px;
   padding-right: 8pt;
 }
 /* Screen shield */

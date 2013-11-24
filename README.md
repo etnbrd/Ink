@@ -6,8 +6,8 @@ A gnome-shell 3.10 theme simply written, in Less.
 
 Two things about gnome-shell theming :
 
-+ It's amazing to have used CSS to render themes.
-+ gnome-shell themes are usually a mess because of this big css file.
++ It's amazing to use CSS to render themes.
++ gnome-shell themes are usually a mess, because one big file is hard to read and maintain.
 
 Less might help us avoid mess.
 
@@ -36,4 +36,12 @@ cp -r Ink ~/.local/share/theme
 git clone https://github.com/etnbrd/Ink.git
 sudo mv /usr/share/gnome-shell/theme /usr/share/gnome-shell/theme.old
 cp -r Ink /usr/share/gnome-shell/theme
+```
+
+## Compilation
+
+To compile and reload the theme from command line :
+
+```
+lessc gnome-shell.less gnome-shell.css && gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();'
 ```

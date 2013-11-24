@@ -2,202 +2,191 @@
 /* Calendar popup */
 
 .calendar-vertical-separator {
-    width: 1px;
-    background: @darken;
+  width: 1px;
+  background: @light;
 }
 
 #calendarPopup .calendar {
-    padding: 10px;
+  padding: 10px;
 }
 
 .calendar {
-    padding: .4em 1.75em .8em 1.75em;
-    spacing-rows: 0px;
-    spacing-columns: 0px;
+  padding: .4em 1.75em .8em 1.75em;
+  spacing-rows: 0px;
+  spacing-columns: 0px;
+  font-size: 10pt;
 }
 
 .calendar-month-label {
-    color: @text;
-    padding-bottom: 8px;
-    padding-top: 8px;
+  color: @text;
+  padding: 8px 50px;
+  
+  &:focus {
+    background-color: @light;
+  }
 }
 
-/* TODO */
-.calendar-month-label:focus {
-    background-color: #999999;
-}
-
-// .calendar-change-month-*
-
-.calendar-change-month-back:hover,
-.calendar-change-month-back:focus,
-.calendar-change-month-back:active,
-.calendar-change-month-forward:hover,
-.calendar-change-month-forward:focus,
-.calendar-change-month-forward:active {
-    color: @high;
-}
-
-.calendar-change-month-back {
-    width: 18px;
-    height: 12px;
-    background-image: url("assets/calendar-arrow-left.svg");
-    border-radius: 0px;
-}
-
-.calendar-change-month-back:rtl {
-    background-image: url("assets/calendar-arrow-right.svg");
-}
-
+.calendar-change-month-back,
 .calendar-change-month-forward {
-    width: 18px;
-    height: 12px;
-    background-image: url("assets/calendar-arrow-right.svg");
-    border-radius: 0px;
+  width: 18px;
+  height: 12px;
+  padding: 0 20px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: @light;
+  }
 }
 
+// TODO no assets, try to use Unicode Arrow, see popup .unicode-arrow
+.calendar-change-month-back,
 .calendar-change-month-forward:rtl {
-    background-image: url("assets/calendar-arrow-left.svg");
+  background-image: url("assets/calendar-arrow-left.svg");
 }
 
-
-// .datemenu
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+  background-image: url("assets/calendar-arrow-right.svg");
+}
 
 .datemenu-date-label {
-    padding: .4em 1.7em;
-    text-align: center;
-    color: @text;
-}
+  padding: .4em 1.7em;
+  text-align: center;
+  color: @text;
 
-.datemenu-date-label:focus {
-    background-color: #999999;
+  &:focus {
+    background-color: @light;
+  }
 }
-
-// .calendar-day
 
 .calendar-day-base {
-    font-size: 9pt;
-    text-align: center;
-    width: 2.4em;
-    height: 2.4em;
-}
-
-.calendar-day-base:hover,
-.calendar-day-base:focus {
-    background-color: #777777;
-}
-
-.calendar-day-base:active {
-    font-size: 9pt;
-    background-color: #555555;
+  text-align: center;
+  width: 2.4em;
+  height: 2.4em;
+  
+  &:hover,
+  &:focus {
+    background-color: @light;
     color: white;
+  }
+
+  &:active {
+    background-color: @light;
+    color: white;
+  }
 }
+
 
 .calendar-day-heading {
-    color: #888a85;
-    padding-top: .2em;
-    height: 1.7em;
+  color: @texten;
+  padding-top: .2em;
+  height: 1.7em;
 }
 
 .calendar-week-number {
-    color: #babdb6;
-    font-weight: bold;
+  font-size: 8pt;
+  text-align: center;
+  padding: 0;
+  color: @texten;
 }
 
-/* Hack used in lieu of border-collapse - see calendar.js */
 .calendar-day {
-    border: 0px solid #505050;
-    color: #babdb6;
-    border-top-width: 0;
-    border-left-width: 0;
-}
-
-.calendar-day-top {
-    border-top-width: 0px;
-}
-
-.calendar-day-left {
-    border-left-width: 0px;
-}
-
-.calendar-work-day {
+  color: @texten;
 }
 
 .calendar-nonwork-day {
-    background-color: rgba(128, 128, 128, .1);
+  background-color: @dark;
 }
 
 .calendar-today {
-    text-shadow: black 0px 2px 2px;
-    font-weight: bold;
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    color: @high;
+  }
 }
 
 .calendar-day-with-events {
-    font-weight: bold;
-    color: white;
+  color: @text;
 }
 
 .calendar-other-month-day {
-    color: #333333;
+  color: @texter;
 }
 
 .events-table {
-    width: 320px;
-    spacing-columns: 6pt;
-    padding: 0 1.4em;
-}
-
-.events-table:ltr {
+  width: 420px;
+  spacing-columns: 6pt;
+  padding: 0 1.4em;
+  
+  &:ltr {
     padding-right: 1.9em;
-}
+  }
 
-.events-table:rtl {
+  &:rtl {
     padding-left: 1.9em;
+  }
 }
 
 .events-day-header {
-    color: @texten;
-    padding-left: 0.4em;
-    padding-top: 1.2em;
-    padding-bottom: 0.3em;
-    border: 1px solid transparent; /* I don't know why but whithout this, the box-shadow doesn't appear, and it would be too simple to use only the border : so it doesn't work either to use only the border */
-    box-shadow: inset 0 -1px 0 0 @texten;
-}
-
-.events-day-header:first-child {
+  color: @texten;
+  padding: 1.2em 0 0.3em 0;
+  /* We need both the border and the box-shadow to make the separator.
+  I don't why though */
+  border: 1px solid transparent;
+  box-shadow: inset 0 -1px 0 0 @light;
+  
+  &:first-child {
     padding-top: 0;
+  }
+
+  &:ltr {
+    padding-left: 0.4em;
+  }
+
+  &:rtl {
+    padding-right: 0.4em;
+  }
 }
 
-.events-day-header:rtl {
-    padding-left: 0;
-    padding-right: 0.4em;
-}
 
 .events-day-dayname {
-    color: rgba(153, 153, 153, 1.0);
-    text-align: left;
-    min-width: 20px;
-}
+  color: @texten;
+  min-width: 20px;
 
-.events-day-dayname:rtl {
+  &:ltr {
+    text-align: left;
+  }
+
+  &:rtl {
     text-align: right;
+  }
 }
 
 .events-day-time {
-    color: #fff;
+  color: @text;
+  
+  &:ltr {
     text-align: right;
+  }
+
+  &:rtl {
+    text-align: left;
+  }
 }
 
-.events-day-time:rtl {
-    text-align: left;
-}
 
 .events-day-task {
-    color: rgba(153, 153, 153, 1.0);
+  color: @texten;
+  
+  &:ltr {
     padding-left: 8pt;
+  }
+  
+  &:rtl {
+    padding-right: 8pt;
+  }
 }
 
-.events-day-task:rtl {
-    padding-left: 0px;
-    padding-right: 8pt;
-}
