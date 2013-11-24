@@ -20,6 +20,12 @@ http://worldofgnome.org/create-a-gnome-shell-theme-with-less-stylesheets/
 
 This is a work in progress, but you can already use it, and issue bug reports.
 
+## Screens
+
+![Screenshot calendar](https://raw.github.com/etnbrd/Ink/master/screens/screen-calendar.png)
+![Screenshot system menu](https://raw.github.com/etnbrd/Ink/master/screens/screen-sys.png)
+
+
 ## Installation
 
 If you install this theme locally, you won't be able to change the login window and the screen-shield, but if something goes wrong, you're safely backed-up by the default theme.
