@@ -1,53 +1,57 @@
 
 /* Message Tray */
 #message-tray {
-    background: @dark;
-    height: 72px;
+  background: @dark;
+  height: 72px;
 }
 
 .message-tray-summary {
-    height: 72px;
+  height: 72px;
 }
 
-.message-tray-menu-button StIcon {
+.message-tray-menu-button {
+  StIcon {
     padding: 0 20px;
-    color: #aaaaaa;
+    color: @text;
     icon-size: 24px;
+  }
+
+  &:hover StIcon,
+  &:active StIcon,
+  &:focus StIcon {
+    color: @high;
+  }
 }
 
-.message-tray-menu-button:hover StIcon,
-.message-tray-menu-button:active StIcon,
-.message-tray-menu-button:focus StIcon {
-    color: #eeeeee;
-}
-
+// TODO
 .no-messages-label,
 .no-networks-label {
-    color: #999999;
+  color: red;
 }
 
 .notification {
-    border-radius: 2px 2px 0px 0px;
-    background: rgba(0,0,0,0.9);
-    padding: 8px 8px 4px 8px;
-    spacing-rows: 4px;
-    spacing-columns: 10px;
+  border-radius: 2px;
+  background: @dark;
+  padding: 20px;
+  spacing-rows: 4px;
+  spacing-columns: 10px;
 }
 
-.notification, #notification-container {
-    font-size: 11pt;
-    width: 34em;
+.notification,
+#notification-container {
+  font-size: 11pt;
+  width: 34em;
 }
 
 .notification.multi-line-notification {
-    padding-bottom: 8px;
+  padding-bottom: 8px;
 }
 
 .notification-unexpanded {
-    /* We want to force the actor at a specific size, irrespective
-       of its minimum and preferred size, so we override both */
-    min-height: 36px;
-    height: 36px;
+  /* We want to force the actor at a specific size, irrespective
+     of its minimum and preferred size, so we override both */
+  min-height: 36px;
+  height: 36px;
 }
 
 /* We use row-span = 2 for the image cell, which prevents its height preferences to be
@@ -55,234 +59,231 @@
    of the content in the other rows. To avoid showing a stretched image, we set the minimum
    height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
 .notification-with-image {
-    min-height: 159px;
+  min-height: 159px;
 }
 
 .summary-boxpointer {
-    -arrow-border-radius: 15px;
-    -arrow-background-color: rgba(0,0,0,0.9);
-    -arrow-base: 36px;
-    -arrow-rise: 18px;
-    color: white;
-    -boxpointer-gap: 4px;
-}
+  -arrow-border-radius: 2px;
+  -arrow-background-color: @dark;
+  -arrow-base: 20px;
+  -arrow-rise: 10px;
+  -arrow-border-color: @darken;
+  -arrow-border-width: 1px;
+  -boxpointer-gap: 10px;
+  color: @text;
 
-.summary-boxpointer .notification {
-    border-radius: 9px;
-    background: rgba(0,0,0,0) !important;
+  & .notification {
     padding-bottom: 12px;
-}
+  }
 
-.summary-boxpointer #summary-right-click-menu {
-    padding-top: 12px;
-    padding-bottom: 12px;
+  & #summary-right-click-menu {
+    padding: 12px 0;
+  }
 }
 
 .summary-notification-stack-scrollview {
-    max-height: 18em;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
+  max-height: 18em;
+  padding: 8px 0;
 
-.summary-notification-stack-scrollview:ltr {
+  &:ltr {
     padding-right: 8px;
-}
+  }
 
-.summary-notification-stack-scrollview:rtl {
+  &:rtl {
     padding-left: 8px;
+  }
 }
 
 .notification-scrollview {
-    max-height: 10em;
-    -st-vfade-offset: 24px;
-}
-
-.notification-scrollview:ltr > StScrollBar {
+  max-height: 10em;
+  -st-vfade-offset: 24px;
+  
+  &:ltr > StScrollBar {
     padding-left: 6px;
-}
+  }
 
-.notification-scrollview:rtl > StScrollBar {
+  &:rtl > StScrollBar {
     padding-right: 6px;
+  }
 }
 
 .notification-body {
-    spacing: 5px;
+  spacing: 5px;
 }
 
 .notification-actions {
-    padding-top: 18px;
-    spacing: 10px;
+  padding-top: 18px;
+  spacing: 10px;
 }
 
 .notification-button {
-    -st-natural-width: 140px;
-    padding: 4px 4px 5px;
-}
+  -st-natural-width: 140px;
+  padding: 4px 4px 5px;
 
-.notification-button:focus {
+  &:focus {
     -st-natural-width: 138px;
     padding: 3px 4px 4px;
+  }
 }
 
 .notification-icon-button {
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.notification-icon-button:focus {
+  border-radius: 2px;
+  padding: 5px;
+ 
+  &:focus {
     padding: 4px;
-}
-
-.notification-icon-button > StIcon {
+  }
+  
+  & > StIcon {
     icon-size: 16px;
     padding: 8px;
+  }
 }
+
 
 .secondary-icon {
-    icon-size: 1.09em;
+  icon-size: 1.09em;
 }
 
+// .hotplug
+
 .hotplug-transient-box {
-    spacing: 6px;
-    padding: 2px 72px 2px 12px;
+  spacing: 10px;
+  padding: 14px 16px 16px 0px;
 }
 
 .hotplug-notification-item {
-    padding: 2px 10px;
-}
-
-.hotplug-notification-item:focus {
-    padding: 1px 71px 1px 11px;
+  &:focus { 
+    color: @high;
+  }
 }
 
 .hotplug-notification-item-icon {
-    icon-size: 24px;
-    padding: 2px 5px;
+  icon-size: 24px;
+  padding: 14px;
 }
 
 .hotplug-resident-box {
-    spacing: 8px;
+  spacing: 10px;
+  // background: @light;
 }
 
 .hotplug-resident-mount {
-    spacing: 8px;
-    border-radius: 4px;
+  spacing: 10px;
+  border-radius: 2px;
+  color: @text;
 
-    color: #ccc;
-}
-
-.hotplug-resident-mount:hover {
-    background-gradient-direction: horizontal;
-    background-gradient-start: rgba(255, 255, 255, 0.1);
-    background-gradient-end: rgba(255, 255, 255, 0);
-
-    color: #fff;
-}
-
-.hotplug-resident-mount-label {
-    color: inherit;
-    padding-left: 6px;
+  &:hover {
+    color: @high;
+    background: @light;
+  }
 }
 
 .hotplug-resident-mount-icon {
-    icon-size: 24px;
-    padding-left: 6px;
+  icon-size: 32px;
+  padding: 14px;
 }
 
 .hotplug-resident-eject-icon {
-    icon-size: 16px;
+  icon-size: 20px;
 }
 
 .hotplug-resident-eject-button {
-    padding: 7px;
-    border-radius: 5px;
-    color: #ccc;
+  padding: 14px;
+  width: 34px;
+  border-radius: 2px;
+  color: @text;
 }
+
+// .chat-log
 
 .chat-log-message {
-    color: #888888;
+  color: @texter;
 }
 
-.chat-group-sent, .chat-group-meta {
-    padding: 8px 0;
+.chat-group-sent,
+.chat-group-received,
+.chat-group-meta {
+  padding: 8px 0;
+}
+
+.chat-group-sent,
+.chat-group-received {
+  border: 1px solid transparent;
+  box-shadow: inset 0 -1px 0 0 @light;
+}
+
+.chat-received,
+.chat-sent,
+.chat-meta-message {
+  &:ltr {
+    padding-left: 4px;
+  }
+
+  &:rtl {
+    padding-right: 4px;
+  }
 }
 
 .chat-received {
-    padding-left: 4px;
-}
-
-.chat-received:rtl {
-    padding-left: 0px;
-    padding-right: 4px;
+  color: @text;
 }
 
 .chat-sent {
-    padding-left: 18pt;
-    color: #959595;
-}
-
-.chat-sent:rtl {
-    padding-left: 0px;
-    padding-right: 18pt;
+  color: @texten;
 }
 
 .chat-meta-message {
-    padding-left: 4px;
-    font-size: 9pt;
-    color: #bbbbbb;
-}
-
-.chat-meta-message:rtl {
-    padding-left: 0px;
-    padding-right: 4px;
+  font-size: 9pt;
+  color: @texter;
 }
 
 .chat-notification-scrollview{
-    max-height: 22em;
+  max-height: 22em;
 }
+
+
 
 .subscription-message {
-    font-style: italic;
-}
-
-.notification StEntry {
-    border-radius: 4px;
+  font-style: italic;
 }
 
 .summary-source-button {
-    padding: 6px 3px 6px 3px;
+  padding: 6px 3px 6px 3px;
 }
 
 .summary-source-button:last-child:ltr {
-    padding-right: 6px;
+  padding-right: 6px;
 }
 
 .summary-source-button:last-child:rtl {
-    padding-left: 6px;
+  padding-left: 6px;
 }
 
 .summary-source-button:hover .summary-source {
-    background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.1);
 }
 
 .summary-source-button:focus .summary-source,
 .summary-source-button:selected .summary-source {
-    background-color: rgba(255,255,255,0.33);
+  background-color: rgba(255,255,255,0.33);
 }
 
 .summary-source {
-    border-radius: 4px;
-    padding: 0 6px 0 6px;
-    transition-duration: 100ms;
+  border-radius: 4px;
+  padding: 0 6px 0 6px;
+  transition-duration: 100ms;
 }
 
+// TODO
 .summary-source-counter {
-    background-image: url("assets/summary-counter.svg");
-    background-size: 2.4em;
-    font-size: 10pt;
-    font-weight: bold;
-    height: 2.4em;
-    width: 2.4em;
-    -shell-counter-overlap-x: 13px;
-    -shell-counter-overlap-y: 13px;
+  // background-image: url("assets/summary-counter.svg");
+  background: red;
+  background-size: 2.4em;
+  font-size: 10pt;
+  font-weight: bold;
+  height: 2.4em;
+  width: 2.4em;
+  -shell-counter-overlap-x: 13px;
+  -shell-counter-overlap-y: 13px;
 }

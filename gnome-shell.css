@@ -272,6 +272,7 @@ StScrollBar StButton#hhandle:active {
 }
 .system-menu-action {
   padding: 14px;
+  color: #ffffff;
 }
 .system-menu-action > StIcon {
   icon-size: 20px;
@@ -399,7 +400,7 @@ StScrollBar StButton#hhandle:active {
 }
 .system-status-icon {
   icon-size: 1.0em;
-  padding: 0 10px;
+  padding: 10px;
 }
 .aggregate-menu {
   width: 400px;
@@ -409,6 +410,7 @@ StScrollBar StButton#hhandle:active {
 }
 .system-switch-user-submenu-icon {
   icon-size: 40px;
+  color: #ffffff;
 }
 /* Calendar popup */
 .calendar-vertical-separator {
@@ -570,22 +572,22 @@ StScrollBar StButton#hhandle:active {
 }
 .message-tray-menu-button StIcon {
   padding: 0 20px;
-  color: #aaaaaa;
+  color: #ffffff;
   icon-size: 24px;
 }
 .message-tray-menu-button:hover StIcon,
 .message-tray-menu-button:active StIcon,
 .message-tray-menu-button:focus StIcon {
-  color: #eeeeee;
+  color: #02c4fb;
 }
 .no-messages-label,
 .no-networks-label {
-  color: #999999;
+  color: red;
 }
 .notification {
-  border-radius: 2px 2px 0px 0px;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 8px 8px 4px 8px;
+  border-radius: 2px;
+  background: #171717;
+  padding: 20px;
   spacing-rows: 4px;
   spacing-columns: 10px;
 }
@@ -599,7 +601,7 @@ StScrollBar StButton#hhandle:active {
 }
 .notification-unexpanded {
   /* We want to force the actor at a specific size, irrespective
-       of its minimum and preferred size, so we override both */
+     of its minimum and preferred size, so we override both */
   min-height: 36px;
   height: 36px;
 }
@@ -611,26 +613,24 @@ StScrollBar StButton#hhandle:active {
   min-height: 159px;
 }
 .summary-boxpointer {
-  -arrow-border-radius: 15px;
-  -arrow-background-color: rgba(0, 0, 0, 0.9);
-  -arrow-base: 36px;
-  -arrow-rise: 18px;
-  color: white;
-  -boxpointer-gap: 4px;
+  -arrow-border-radius: 2px;
+  -arrow-background-color: #171717;
+  -arrow-base: 20px;
+  -arrow-rise: 10px;
+  -arrow-border-color: #000000;
+  -arrow-border-width: 1px;
+  -boxpointer-gap: 10px;
+  color: #ffffff;
 }
 .summary-boxpointer .notification {
-  border-radius: 9px;
-  background: rgba(0, 0, 0, 0) !important;
   padding-bottom: 12px;
 }
 .summary-boxpointer #summary-right-click-menu {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 12px 0;
 }
 .summary-notification-stack-scrollview {
   max-height: 18em;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 8px 0;
 }
 .summary-notification-stack-scrollview:ltr {
   padding-right: 8px;
@@ -664,7 +664,7 @@ StScrollBar StButton#hhandle:active {
   padding: 3px 4px 4px;
 }
 .notification-icon-button {
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 5px;
 }
 .notification-icon-button:focus {
@@ -678,88 +678,79 @@ StScrollBar StButton#hhandle:active {
   icon-size: 1.09em;
 }
 .hotplug-transient-box {
-  spacing: 6px;
-  padding: 2px 72px 2px 12px;
-}
-.hotplug-notification-item {
-  padding: 2px 10px;
+  spacing: 10px;
+  padding: 14px 16px 16px 0px;
 }
 .hotplug-notification-item:focus {
-  padding: 1px 71px 1px 11px;
+  color: #02c4fb;
 }
 .hotplug-notification-item-icon {
   icon-size: 24px;
-  padding: 2px 5px;
+  padding: 14px;
 }
 .hotplug-resident-box {
-  spacing: 8px;
+  spacing: 10px;
 }
 .hotplug-resident-mount {
-  spacing: 8px;
-  border-radius: 4px;
-  color: #ccc;
+  spacing: 10px;
+  border-radius: 2px;
+  color: #ffffff;
 }
 .hotplug-resident-mount:hover {
-  background-gradient-direction: horizontal;
-  background-gradient-start: rgba(255, 255, 255, 0.1);
-  background-gradient-end: rgba(255, 255, 255, 0);
-  color: #fff;
-}
-.hotplug-resident-mount-label {
-  color: inherit;
-  padding-left: 6px;
+  color: #02c4fb;
+  background: #212121;
 }
 .hotplug-resident-mount-icon {
-  icon-size: 24px;
-  padding-left: 6px;
+  icon-size: 32px;
+  padding: 14px;
 }
 .hotplug-resident-eject-icon {
-  icon-size: 16px;
+  icon-size: 20px;
 }
 .hotplug-resident-eject-button {
-  padding: 7px;
-  border-radius: 5px;
-  color: #ccc;
+  padding: 14px;
+  width: 34px;
+  border-radius: 2px;
+  color: #ffffff;
 }
 .chat-log-message {
-  color: #888888;
+  color: #323232;
 }
 .chat-group-sent,
+.chat-group-received,
 .chat-group-meta {
   padding: 8px 0;
 }
-.chat-received {
+.chat-group-sent,
+.chat-group-received {
+  border: 1px solid transparent;
+  box-shadow: inset 0 -1px 0 0 #212121;
+}
+.chat-received:ltr,
+.chat-sent:ltr,
+.chat-meta-message:ltr {
   padding-left: 4px;
 }
-.chat-received:rtl {
-  padding-left: 0px;
+.chat-received:rtl,
+.chat-sent:rtl,
+.chat-meta-message:rtl {
   padding-right: 4px;
+}
+.chat-received {
+  color: #ffffff;
 }
 .chat-sent {
-  padding-left: 18pt;
-  color: #959595;
-}
-.chat-sent:rtl {
-  padding-left: 0px;
-  padding-right: 18pt;
+  color: #787878;
 }
 .chat-meta-message {
-  padding-left: 4px;
   font-size: 9pt;
-  color: #bbbbbb;
-}
-.chat-meta-message:rtl {
-  padding-left: 0px;
-  padding-right: 4px;
+  color: #323232;
 }
 .chat-notification-scrollview {
   max-height: 22em;
 }
 .subscription-message {
   font-style: italic;
-}
-.notification StEntry {
-  border-radius: 4px;
 }
 .summary-source-button {
   padding: 6px 3px 6px 3px;
@@ -783,7 +774,7 @@ StScrollBar StButton#hhandle:active {
   transition-duration: 100ms;
 }
 .summary-source-counter {
-  background-image: url("assets/summary-counter.svg");
+  background: red;
   background-size: 2.4em;
   font-size: 10pt;
   font-weight: bold;
