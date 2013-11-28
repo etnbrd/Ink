@@ -28,8 +28,8 @@
 /* Text Styles */
 /* default text style */
 stage {
-  font-family: "Roboto Light", sans-serif;
-  font-size: 11pt;
+  font-family: "Roboto Thin", sans-serif;
+  font-size: 10pt;
   color: #ffffff;
 }
 /* links */
@@ -380,6 +380,17 @@ StScrollBar StButton#hhandle:active {
   color: #ffffff;
   transition-duration: 100ms;
 }
+#panelActivities {
+  background-image: url("assets/panelActivities.png");
+  background-size: 30px 30px;
+  background-position: center;
+  width: 80px;
+  height: 20px;
+  color: transparent;
+}
+#panelActivities:hover {
+  background-image: url("assets/panelActivities-hover.png");
+}
 #panel.unlock-screen .panel-button,
 #panel.lock-screen .panel-button,
 #panel.login-screen .panel-button {
@@ -582,7 +593,7 @@ StScrollBar StButton#hhandle:active {
 }
 .no-messages-label,
 .no-networks-label {
-  color: red;
+  color: #323232;
 }
 .notification {
   border-radius: 2px;
