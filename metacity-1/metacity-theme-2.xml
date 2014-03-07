@@ -604,7 +604,7 @@
   <button function="unabove" state="pressed" draw_ops="close_focused_pressed"/>
   <button function="stick" state="normal" draw_ops="close_focused_normal"/>
   <button function="stick" state="prelight" draw_ops="close_focused_prelight"/>
-  <button function="stick" state="pressed" draw_ops="close_focused_pressed"/>gnome
+  <button function="stick" state="pressed" draw_ops="close_focused_pressed"/>
   <button function="unstick" state="normal" draw_ops="close_focused_normal"/>
   <button function="unstick" state="prelight" draw_ops="close_focused_prelight"/>
   <button function="unstick" state="pressed" draw_ops="close_focused_pressed"/>
