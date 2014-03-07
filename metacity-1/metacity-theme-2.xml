@@ -1,0 +1,682 @@
+<?xml version="1.0"?>
+<!--This theme is a combination of 'Carbonated for Adwaita' and 'Knopka' by Resomizer-->
+<metacity_theme>
+<info>
+  <name>Ink</name>
+  <author>etnbrd</author>
+  <copyright>1inuxr</copyright>
+  <date>January 29 2014</date>
+  <description>Ink : minimal flat lined theme</description>
+</info>
+
+<!-- general window layout -->
+<frame_geometry name="frame_geometry_normal" title_scale="medium" rounded_top_left="false" rounded_top_right="false" rounded_bottom_left="false" rounded_bottom_right="false">
+  <distance name="left_width" value="0"/>
+  <distance name="right_width" value="0"/>
+  <distance name="bottom_height" value="0"/>
+  <distance name="left_titlebar_edge" value="0"/>
+  <distance name="right_titlebar_edge" value="0"/>
+  <distance name="button_width" value="15"/>
+  <distance name="button_height" value="15"/>
+  <distance name="title_vertical_pad" value="0"/>
+  <border name="title_border" left="15" right="8" top="8" bottom="8"/>
+  <border name="button_border" left="8" right="13" top="8" bottom="8"/>
+</frame_geometry>
+
+<frame_geometry name="frame_geometry_abnormal" title_scale="medium" rounded_top_left="false" rounded_top_right="false">
+  <distance name="left_width" value="0"/>
+  <distance name="right_width" value="0"/>
+  <distance name="bottom_height" value="0"/>
+  <distance name="left_titlebar_edge" value="10"/>
+  <distance name="right_titlebar_edge" value="10"/>
+  <distance name="button_width" value="34"/>
+  <distance name="button_height" value="32"/>
+  <distance name="title_vertical_pad" value="0"/>
+  <border name="title_border" left="8" right="8" top="3" bottom="0"/>
+  <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+
+<frame_geometry name="geometry_maximized" has_title="false" rounded_top_left="false" rounded_top_right="false" rounded_bottom_left="false" rounded_bottom_right="false">
+  <distance name="left_width" value="0"/>
+  <distance name="right_width" value="0"/>
+  <distance name="bottom_height" value="0"/>
+  <distance name="left_titlebar_edge" value="0"/>
+  <distance name="right_titlebar_edge" value="0"/>
+  <distance name="button_width" value="0"/>
+  <distance name="button_height" value="0"/>
+  <distance name="title_vertical_pad" value="0"/>
+  <border name="title_border" left="8" right="8" top="0" bottom="0"/>
+  <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+
+<frame_geometry name="border" has_title="false">
+  <distance name="left_width" value="30"/>
+  <distance name="right_width" value="30"/>
+  <distance name="bottom_height" value="30"/>
+  <distance name="left_titlebar_edge" value="0"/>
+  <distance name="right_titlebar_edge" value="0"/>
+  <distance name="button_width" value="0"/>
+  <distance name="button_height" value="0"/>
+  <distance name="title_vertical_pad" value="0"/>
+  <border name="title_border" left="8" right="8" top="3" bottom="0"/>
+  <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+
+
+<!-- title text -->
+<draw_ops name="draw_title_text_normal">
+  <title color="rgb(255, 255, 255)" x="0" y="0"/>
+</draw_ops>
+
+<draw_ops name="draw_title_text_unfocused">
+  <title color="rgb(120, 120, 120)" x="0" y="0"/>
+</draw_ops>
+
+
+<!-- title -->
+<!-- if using height="object_height" then won't scale as title text gets larger --> 
+<draw_ops name="draw_title">
+  <rectangle color="rgb(23, 23, 23)" x="0" y="0" width="width" height="height" filled="true" />
+</draw_ops>
+
+<draw_ops name="draw_title_utility">
+  <include name="draw_title" />
+</draw_ops>
+
+<draw_ops name="draw_title_unfocused">
+  <rectangle color="rgb( 0, 0, 0)" x="0" y="0" width="width" height="height" filled="true" />
+</draw_ops>
+
+<draw_ops name="draw_title_utility_unfocused">
+  <include name="draw_title_unfocused" />
+</draw_ops>
+
+<draw_ops name="draw_title_maximized">
+  <include name="draw_title" />
+</draw_ops>
+
+<draw_ops name="draw_title_maximized_unfocused">
+  <include name="draw_title_unfocused" />
+</draw_ops>
+
+<!-- window frames -->
+<draw_ops name="draw_frame">
+  <line color="rgb(23, 23, 23)" x1="width-1" x2="width-1" y1="0" y2="height"/>
+</draw_ops>
+
+<draw_ops name="draw_frame_utility">
+  <line color="rgb(23, 23, 23)" x1="width-1" x2="width-1" y1="0" y2="height"/>
+</draw_ops>
+
+<draw_ops name="bottom_edge">
+  <line color="rgb(23, 23, 23)" x1="0" x2="width" y1="height-1" y2="height-1"/>
+</draw_ops>
+
+<!-- buttons -->
+<draw_ops name="menu_focused_normal">
+   <!-- <image filename="menu.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="menu_focused_prelight">
+  <!-- <image filename="menu_prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="menu_unfocused_normal">
+  <!-- <image filename="menu.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="menu_unfocused_prelight">
+  <!-- <image filename="menu_prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_focused_normal">
+  <!-- <image filename="hide-active.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_focused_prelight">
+  <!-- <image filename="hide-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_focused_pressed">
+  <!-- <image filename="hide-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_unfocused_normal">
+  <!-- <image filename="hide-inactive.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_unfocused_prelight">
+  <!-- <image filename="hide-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_unfocused_pressed">
+  <!-- <image filename="hide-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_focused_normal">
+  <!-- <image filename="maximize-active.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_focused_prelight">
+  <!-- <image filename="maximize-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_focused_pressed">
+  <!-- <image filename="maximize-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_unfocused_normal">
+  <!-- <image filename="maximize-inactive.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_unfocused_prelight">
+  <!-- <image filename="maximize-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_unfocused_pressed">
+  <!-- <image filename="maximize-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_focused_normal">
+  <!-- <image filename="maximize-active.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_focused_prelight">
+  <!-- <image filename="maximize-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_focused_pressed">
+  <!-- <image filename="maximize-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_unfocused_normal">
+  <!-- <image filename="maximize-inactive.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_unfocused_prelight">
+  <!-- <image filename="maximize-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_unfocused_pressed">
+  <!-- <image filename="maximize-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+
+
+<draw_ops name="close_focused_normal">
+  <image filename="close-fade.svg" x="0" y="0" width="object_width" height="object_height"/>
+</draw_ops>
+<draw_ops name="close_focused_prelight">
+  <image filename="close.svg" x="0" y="0" width="object_width" height="object_height"/>
+</draw_ops>
+<draw_ops name="close_focused_pressed">
+  <image filename="close.svg" x="0" y="0" width="object_width" height="object_height"/>
+</draw_ops>
+
+<draw_ops name="close_unfocused_normal">
+</draw_ops>
+<draw_ops name="close_unfocused_prelight">
+</draw_ops>
+<draw_ops name="close_unfocused_pressed">
+</draw_ops>
+
+<!-- frame style -->
+<frame_style name="normal_focused" geometry="frame_geometry_normal">
+  <piece position="title" draw_ops="draw_title_text_normal"/>
+  <piece position="titlebar" draw_ops="draw_title"/>
+  <button function="menu" state="normal" draw_ops="menu_focused_normal"/>
+  <button function="menu" state="prelight" draw_ops="menu_focused_prelight"/>
+  <button function="menu" state="pressed" draw_ops="menu_focused_normal"/> 
+  <button function="minimize" state="normal" draw_ops="minimize_focused_normal"/>
+  <button function="minimize" state="prelight" draw_ops="minimize_focused_prelight"/>
+  <button function="minimize" state="pressed" draw_ops="minimize_focused_pressed"/>
+  <button function="maximize" state="normal" draw_ops="maximize_focused_normal"/>
+  <button function="maximize" state="prelight" draw_ops="maximize_focused_prelight"/>
+  <button function="maximize" state="pressed" draw_ops="maximize_focused_pressed"/>
+  <button function="close" state="normal" draw_ops="close_focused_normal"/>
+  <button function="close" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="close" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="shade" state="normal" draw_ops="close_focused_normal"/>
+  <button function="shade" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="shade" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unshade" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unshade" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unshade" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="above" state="normal" draw_ops="close_focused_normal"/>
+  <button function="above" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="above" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unabove" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unabove" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unabove" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="stick" state="normal" draw_ops="close_focused_normal"/>
+  <button function="stick" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="stick" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unstick" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unstick" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unstick" state="pressed" draw_ops="close_focused_pressed"/>
+</frame_style>
+
+<frame_style name="normal_unfocused" geometry="frame_geometry_normal">
+  <piece position="title" draw_ops="draw_title_text_unfocused"/>
+  <piece position="titlebar" draw_ops="draw_title_unfocused"/>
+  <button function="menu" state="normal" draw_ops="menu_unfocused_normal"/>
+  <button function="menu" state="prelight" draw_ops="menu_unfocused_prelight"/>
+  <button function="menu" state="pressed" draw_ops="menu_unfocused_normal"/> 
+  <button function="minimize" state="normal" draw_ops="minimize_unfocused_normal"/>
+  <button function="minimize" state="prelight" draw_ops="minimize_unfocused_prelight"/>
+  <button function="minimize" state="pressed" draw_ops="minimize_unfocused_pressed"/>
+  <button function="maximize" state="normal" draw_ops="maximize_unfocused_normal"/>
+  <button function="maximize" state="prelight" draw_ops="maximize_unfocused_prelight"/>
+  <button function="maximize" state="pressed" draw_ops="maximize_unfocused_pressed"/>
+  <button function="close" state="normal" draw_ops="close_unfocused_normal"/>
+  <button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
+  <button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
+  <button function="shade" state="normal" draw_ops="close_focused_normal"/>
+  <button function="shade" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="shade" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unshade" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unshade" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unshade" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="above" state="normal" draw_ops="close_focused_normal"/>
+  <button function="above" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="above" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unabove" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unabove" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unabove" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="stick" state="normal" draw_ops="close_focused_normal"/>
+  <button function="stick" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="stick" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unstick" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unstick" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unstick" state="pressed" draw_ops="close_focused_pressed"/>
+</frame_style>
+
+<frame_style name="maximized_focused" geometry="geometry_maximized" parent="normal_focused">
+</frame_style>
+
+<frame_style name="maximized_unfocused" geometry="geometry_maximized" parent="normal_unfocused">
+</frame_style>
+
+<frame_style name="utility_focused" parent="normal_focused">
+  <piece position="title" draw_ops="draw_title_text_normal"/>
+  <piece position="titlebar" draw_ops="draw_title_utility"/>
+  <button function="close" state="normal" draw_ops="close_focused_normal"/>
+  <button function="close" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="close" state="pressed" draw_ops="close_focused_pressed"/>
+</frame_style>
+
+<frame_style name="utility_unfocused" parent="normal_unfocused">
+  <piece position="title" draw_ops="draw_title_text_unfocused"/>
+  <piece position="titlebar" draw_ops="draw_title_utility_unfocused"/>
+  <button function="close" state="normal" draw_ops="close_unfocused_normal"/>
+  <button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
+  <button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
+</frame_style>
+
+<frame_style name="border" geometry="border" parent="normal_focused">
+  <piece position="title" draw_ops="draw_title"/>
+  <piece position="titlebar" draw_ops="draw_title_unfocused"/>
+</frame_style>
+
+<!-- style set -->
+<frame_style_set name="normal">
+  <frame focus="yes" state="normal" resize="both" style="normal_focused"/>
+  <frame focus="no" state="normal" resize="both" style="normal_unfocused"/>
+  <frame focus="yes" state="maximized" style="maximized_focused"/>
+  <frame focus="no" state="maximized" style="maximized_unfocused"/>
+  <frame focus="yes" state="shaded" style="normal_focused"/><!-- todo -->
+  <frame focus="no" state="shaded" style="normal_unfocused"/><!-- todo -->
+  <frame focus="yes" state="maximized_and_shaded" style="maximized_focused"/><!-- todo -->
+  <frame focus="no" state="maximized_and_shaded" style="maximized_unfocused"/><!-- todo -->
+</frame_style_set>
+
+<frame_style_set name="utility">
+  <frame focus="yes" state="normal" resize="both" style="utility_focused"/>
+  <frame focus="no" state="normal" resize="both" style="utility_unfocused"/>
+  <frame focus="yes" state="maximized" style="maximized_focused"/>
+  <frame focus="no" state="maximized" style="maximized_focused"/>
+  <frame focus="yes" state="shaded" style="normal_focused"/><!-- todo -->
+  <frame focus="no" state="shaded" style="normal_unfocused"/><!-- todo -->
+  <frame focus="yes" state="maximized_and_shaded" style="maximized_focused"/><!-- todo -->
+  <frame focus="no" state="maximized_and_shaded" style="maximized_unfocused"/><!-- todo -->
+</frame_style_set>
+
+<frame_style_set name="border">
+  <frame focus="yes" state="normal" resize="both" style="border"/>
+  <frame focus="no" state="normal" resize="both" style="border"/>
+  <frame focus="yes" state="maximized" style="maximized_focused"/>
+  <frame focus="no" state="maximized" style="maximized_focused"/>
+  <frame focus="yes" state="shaded" style="normal_focused"/><!-- todo -->
+  <frame focus="no" state="shaded" style="normal_unfocused"/><!-- todo -->
+  <frame focus="yes" state="maximized_and_shaded" style="maximized_focused"/><!-- todo -->
+  <frame focus="no" state="maximized_and_shaded" style="maximized_unfocused"/><!-- todo -->
+</frame_style_set>
+
+<!-- window -->
+<window type="normal" style_set="normal"/>
+<window type="dialog" style_set="utility"/>
+<window type="modal_dialog" style_set="utility"/>
+<window type="menu" style_set="utility"/>
+<window type="utility" style_set="utility"/>
+<window type="border" style_set="border"/>
+
+</metacity_theme> 
+<?xml version="1.0"?>
+<!--This theme is a combination of 'Carbonated for Adwaita' and 'Knopka' by Resomizer-->
+<metacity_theme>
+<info>
+  <name>Ink</name>
+  <author>etnbrd</author>
+  <copyright>1inuxr</copyright>
+  <date>January 29 2014</date>
+  <description>Ink : minimal flat lined theme</description>
+</info>
+
+<!-- general window layout -->
+<frame_geometry name="frame_geometry_normal" title_scale="medium" rounded_top_left="false" rounded_top_right="false" rounded_bottom_left="false" rounded_bottom_right="false">
+  <distance name="left_width" value="0"/>
+  <distance name="right_width" value="0"/>
+  <distance name="bottom_height" value="0"/>
+  <distance name="left_titlebar_edge" value="0"/>
+  <distance name="right_titlebar_edge" value="0"/>
+  <distance name="button_width" value="15"/>
+  <distance name="button_height" value="15"/>
+  <distance name="title_vertical_pad" value="0"/>
+  <border name="title_border" left="15" right="8" top="8" bottom="8"/>
+  <border name="button_border" left="8" right="13" top="8" bottom="8"/>
+</frame_geometry>
+
+<frame_geometry name="frame_geometry_abnormal" title_scale="medium" rounded_top_left="false" rounded_top_right="false">
+  <distance name="left_width" value="0"/>
+  <distance name="right_width" value="0"/>
+  <distance name="bottom_height" value="0"/>
+  <distance name="left_titlebar_edge" value="10"/>
+  <distance name="right_titlebar_edge" value="10"/>
+  <distance name="button_width" value="34"/>
+  <distance name="button_height" value="32"/>
+  <distance name="title_vertical_pad" value="0"/>
+  <border name="title_border" left="8" right="8" top="3" bottom="0"/>
+  <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+
+<frame_geometry name="geometry_maximized" has_title="false" rounded_top_left="false" rounded_top_right="false" rounded_bottom_left="false" rounded_bottom_right="false">
+  <distance name="left_width" value="0"/>
+  <distance name="right_width" value="0"/>
+  <distance name="bottom_height" value="0"/>
+  <distance name="left_titlebar_edge" value="0"/>
+  <distance name="right_titlebar_edge" value="0"/>
+  <distance name="button_width" value="0"/>
+  <distance name="button_height" value="0"/>
+  <distance name="title_vertical_pad" value="0"/>
+  <border name="title_border" left="8" right="8" top="0" bottom="0"/>
+  <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+
+<frame_geometry name="border" has_title="false">
+  <distance name="left_width" value="30"/>
+  <distance name="right_width" value="30"/>
+  <distance name="bottom_height" value="30"/>
+  <distance name="left_titlebar_edge" value="0"/>
+  <distance name="right_titlebar_edge" value="0"/>
+  <distance name="button_width" value="0"/>
+  <distance name="button_height" value="0"/>
+  <distance name="title_vertical_pad" value="0"/>
+  <border name="title_border" left="8" right="8" top="3" bottom="0"/>
+  <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+
+
+<!-- title text -->
+<draw_ops name="draw_title_text_normal">
+  <title color="rgb(255, 255, 255)" x="0" y="0"/>
+</draw_ops>
+
+<draw_ops name="draw_title_text_unfocused">
+  <title color="rgb(120, 120, 120)" x="0" y="0"/>
+</draw_ops>
+
+
+<!-- title -->
+<!-- if using height="object_height" then won't scale as title text gets larger --> 
+<draw_ops name="draw_title">
+  <rectangle color="rgb(23, 23, 23)" x="0" y="0" width="width" height="height" filled="true" />
+</draw_ops>
+
+<draw_ops name="draw_title_utility">
+  <include name="draw_title" />
+</draw_ops>
+
+<draw_ops name="draw_title_unfocused">
+  <rectangle color="rgb( 0, 0, 0)" x="0" y="0" width="width" height="height" filled="true" />
+</draw_ops>
+
+<draw_ops name="draw_title_utility_unfocused">
+  <include name="draw_title_unfocused" />
+</draw_ops>
+
+<draw_ops name="draw_title_maximized">
+  <include name="draw_title" />
+</draw_ops>
+
+<draw_ops name="draw_title_maximized_unfocused">
+  <include name="draw_title_unfocused" />
+</draw_ops>
+
+<!-- window frames -->
+<draw_ops name="draw_frame">
+  <line color="rgb(23, 23, 23)" x1="width-1" x2="width-1" y1="0" y2="height"/>
+</draw_ops>
+
+<draw_ops name="draw_frame_utility">
+  <line color="rgb(23, 23, 23)" x1="width-1" x2="width-1" y1="0" y2="height"/>
+</draw_ops>
+
+<draw_ops name="bottom_edge">
+  <line color="rgb(23, 23, 23)" x1="0" x2="width" y1="height-1" y2="height-1"/>
+</draw_ops>
+
+<!-- buttons -->
+<draw_ops name="menu_focused_normal">
+   <!-- <image filename="menu.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="menu_focused_prelight">
+  <!-- <image filename="menu_prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="menu_unfocused_normal">
+  <!-- <image filename="menu.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="menu_unfocused_prelight">
+  <!-- <image filename="menu_prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_focused_normal">
+  <!-- <image filename="hide-active.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_focused_prelight">
+  <!-- <image filename="hide-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_focused_pressed">
+  <!-- <image filename="hide-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_unfocused_normal">
+  <!-- <image filename="hide-inactive.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_unfocused_prelight">
+  <!-- <image filename="hide-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="minimize_unfocused_pressed">
+  <!-- <image filename="hide-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_focused_normal">
+  <!-- <image filename="maximize-active.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_focused_prelight">
+  <!-- <image filename="maximize-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_focused_pressed">
+  <!-- <image filename="maximize-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_unfocused_normal">
+  <!-- <image filename="maximize-inactive.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_unfocused_prelight">
+  <!-- <image filename="maximize-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="maximize_unfocused_pressed">
+  <!-- <image filename="maximize-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_focused_normal">
+  <!-- <image filename="maximize-active.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_focused_prelight">
+  <!-- <image filename="maximize-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_focused_pressed">
+  <!-- <image filename="maximize-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_unfocused_normal">
+  <!-- <image filename="maximize-inactive.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_unfocused_prelight">
+  <!-- <image filename="maximize-prelight.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+<draw_ops name="unmaximize_unfocused_pressed">
+  <!-- <image filename="maximize-pressed.png" x="0" y="0" width="object_width" height="object_height"/> -->
+</draw_ops>
+
+
+<draw_ops name="close_focused_normal">
+  <image filename="close-fade.svg" x="0" y="0" width="object_width" height="object_height"/>
+</draw_ops>
+<draw_ops name="close_focused_prelight">
+  <image filename="close.svg" x="0" y="0" width="object_width" height="object_height"/>
+</draw_ops>
+<draw_ops name="close_focused_pressed">
+  <image filename="close.svg" x="0" y="0" width="object_width" height="object_height"/>
+</draw_ops>
+
+<draw_ops name="close_unfocused_normal">
+</draw_ops>
+<draw_ops name="close_unfocused_prelight">
+</draw_ops>
+<draw_ops name="close_unfocused_pressed">
+</draw_ops>
+
+<!-- frame style -->
+<frame_style name="normal_focused" geometry="frame_geometry_normal">
+  <piece position="title" draw_ops="draw_title_text_normal"/>
+  <piece position="titlebar" draw_ops="draw_title"/>
+  <button function="menu" state="normal" draw_ops="menu_focused_normal"/>
+  <button function="menu" state="prelight" draw_ops="menu_focused_prelight"/>
+  <button function="menu" state="pressed" draw_ops="menu_focused_normal"/> 
+  <button function="minimize" state="normal" draw_ops="minimize_focused_normal"/>
+  <button function="minimize" state="prelight" draw_ops="minimize_focused_prelight"/>
+  <button function="minimize" state="pressed" draw_ops="minimize_focused_pressed"/>
+  <button function="maximize" state="normal" draw_ops="maximize_focused_normal"/>
+  <button function="maximize" state="prelight" draw_ops="maximize_focused_prelight"/>
+  <button function="maximize" state="pressed" draw_ops="maximize_focused_pressed"/>
+  <button function="close" state="normal" draw_ops="close_focused_normal"/>
+  <button function="close" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="close" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="shade" state="normal" draw_ops="close_focused_normal"/>
+  <button function="shade" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="shade" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unshade" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unshade" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unshade" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="above" state="normal" draw_ops="close_focused_normal"/>
+  <button function="above" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="above" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unabove" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unabove" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unabove" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="stick" state="normal" draw_ops="close_focused_normal"/>
+  <button function="stick" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="stick" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unstick" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unstick" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unstick" state="pressed" draw_ops="close_focused_pressed"/>
+</frame_style>
+
+<frame_style name="normal_unfocused" geometry="frame_geometry_normal">
+  <piece position="title" draw_ops="draw_title_text_unfocused"/>
+  <piece position="titlebar" draw_ops="draw_title_unfocused"/>
+  <button function="menu" state="normal" draw_ops="menu_unfocused_normal"/>
+  <button function="menu" state="prelight" draw_ops="menu_unfocused_prelight"/>
+  <button function="menu" state="pressed" draw_ops="menu_unfocused_normal"/> 
+  <button function="minimize" state="normal" draw_ops="minimize_unfocused_normal"/>
+  <button function="minimize" state="prelight" draw_ops="minimize_unfocused_prelight"/>
+  <button function="minimize" state="pressed" draw_ops="minimize_unfocused_pressed"/>
+  <button function="maximize" state="normal" draw_ops="maximize_unfocused_normal"/>
+  <button function="maximize" state="prelight" draw_ops="maximize_unfocused_prelight"/>
+  <button function="maximize" state="pressed" draw_ops="maximize_unfocused_pressed"/>
+  <button function="close" state="normal" draw_ops="close_unfocused_normal"/>
+  <button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
+  <button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
+  <button function="shade" state="normal" draw_ops="close_focused_normal"/>
+  <button function="shade" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="shade" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unshade" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unshade" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unshade" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="above" state="normal" draw_ops="close_focused_normal"/>
+  <button function="above" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="above" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="unabove" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unabove" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unabove" state="pressed" draw_ops="close_focused_pressed"/>
+  <button function="stick" state="normal" draw_ops="close_focused_normal"/>
+  <button function="stick" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="stick" state="pressed" draw_ops="close_focused_pressed"/>gnome
+  <button function="unstick" state="normal" draw_ops="close_focused_normal"/>
+  <button function="unstick" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="unstick" state="pressed" draw_ops="close_focused_pressed"/>
+</frame_style>
+
+<frame_style name="maximized_focused" geometry="geometry_maximized" parent="normal_focused">
+</frame_style>
+
+<frame_style name="maximized_unfocused" geometry="geometry_maximized" parent="normal_unfocused">
+</frame_style>
+
+<frame_style name="utility_focused" parent="normal_focused">
+  <piece position="title" draw_ops="draw_title_text_normal"/>
+  <piece position="titlebar" draw_ops="draw_title_utility"/>
+  <button function="close" state="normal" draw_ops="close_focused_normal"/>
+  <button function="close" state="prelight" draw_ops="close_focused_prelight"/>
+  <button function="close" state="pressed" draw_ops="close_focused_pressed"/>
+</frame_style>
+
+<frame_style name="utility_unfocused" parent="normal_unfocused">
+  <piece position="title" draw_ops="draw_title_text_unfocused"/>
+  <piece position="titlebar" draw_ops="draw_title_utility_unfocused"/>
+  <button function="close" state="normal" draw_ops="close_unfocused_normal"/>
+  <button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
+  <button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
+</frame_style>
+
+<frame_style name="border" geometry="border" parent="normal_focused">
+  <piece position="title" draw_ops="draw_title"/>
+  <piece position="titlebar" draw_ops="draw_title_unfocused"/>
+</frame_style>
+
+<!-- style set -->
+<frame_style_set name="normal">
+  <frame focus="yes" state="normal" resize="both" style="normal_focused"/>
+  <frame focus="no" state="normal" resize="both" style="normal_unfocused"/>
+  <frame focus="yes" state="maximized" style="maximized_focused"/>
+  <frame focus="no" state="maximized" style="maximized_unfocused"/>
+  <frame focus="yes" state="shaded" style="normal_focused"/><!-- todo -->
+  <frame focus="no" state="shaded" style="normal_unfocused"/><!-- todo -->
+  <frame focus="yes" state="maximized_and_shaded" style="maximized_focused"/><!-- todo -->
+  <frame focus="no" state="maximized_and_shaded" style="maximized_unfocused"/><!-- todo -->
+</frame_style_set>
+
+<frame_style_set name="utility">
+  <frame focus="yes" state="normal" resize="both" style="utility_focused"/>
+  <frame focus="no" state="normal" resize="both" style="utility_unfocused"/>
+  <frame focus="yes" state="maximized" style="maximized_focused"/>
+  <frame focus="no" state="maximized" style="maximized_focused"/>
+  <frame focus="yes" state="shaded" style="normal_focused"/><!-- todo -->
+  <frame focus="no" state="shaded" style="normal_unfocused"/><!-- todo -->
+  <frame focus="yes" state="maximized_and_shaded" style="maximized_focused"/><!-- todo -->
+  <frame focus="no" state="maximized_and_shaded" style="maximized_unfocused"/><!-- todo -->
+</frame_style_set>
+
+<frame_style_set name="border">
+  <frame focus="yes" state="normal" resize="both" style="border"/>
+  <frame focus="no" state="normal" resize="both" style="border"/>
+  <frame focus="yes" state="maximized" style="maximized_focused"/>
+  <frame focus="no" state="maximized" style="maximized_focused"/>
+  <frame focus="yes" state="shaded" style="normal_focused"/><!-- todo -->
+  <frame focus="no" state="shaded" style="normal_unfocused"/><!-- todo -->
+  <frame focus="yes" state="maximized_and_shaded" style="maximized_focused"/><!-- todo -->
+  <frame focus="no" state="maximized_and_shaded" style="maximized_unfocused"/><!-- todo -->
+</frame_style_set>
+
+<!-- window -->
+<window type="normal" style_set="normal"/>
+<window type="dialog" style_set="utility"/>
+<window type="modal_dialog" style_set="utility"/>
+<window type="menu" style_set="utility"/>
+<window type="utility" style_set="utility"/>
+<window type="border" style_set="border"/>
+
+</metacity_theme> 
