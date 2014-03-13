@@ -6,14 +6,14 @@
 .mount-question-dialog-subject,
 .end-session-dialog-subject {
     font-size: 9pt;
-    font-weight: normal;
+    font-weight: 100;
     color: #999999;
 }
 
 .modal-dialog {
     border-radius: 2px;
-    background-color: rgb(23, 23, 23);
-    border: 1px solid rgb(0, 0, 0);
+    background-color: @dark;
+    border: 0.5px solid @darken;
 
     padding-right: 42px;
     padding-left: 42px;
@@ -37,9 +37,9 @@
 /* Run Dialog */
 
 .run-dialog-label {
-    font-size: 12pt;
-    font-weight: normal;
-    color: #999999;
+    font-size: 10pt;
+    font-weight: 100;
+    color: @texten;
     padding-bottom: .4em;
 }
 
@@ -53,11 +53,11 @@
 }
 
 .lightbox {
-    background-color: black;
+    background-color: @darken;
 }
 
 .flashspot {
-    background-color: white;
+    background-color: @text;
 }
 
 /* End Session Dialog */
@@ -89,10 +89,10 @@
 }
 
 .end-session-dialog-logout-icon {
-    border: 2px solid #8b8b8b;
-    border-radius: 5px;
-    width: 32px;
-    height: 32px;
+    border: 0.5px solid @texten;
+    border-radius: 2px;
+    width: 52px;
+    height: 52px;
     background-size: contain;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .end-session-dialog-list-header {
-    font-weight: bold;
+    font-weight: 100;
 }
 
 .end-session-dialog-app-list-item,
@@ -120,11 +120,11 @@
 
 .end-session-dialog-app-list-item-name,
 .end-session-dialog-session-list-item-name {
-    font-weight: bold;
+    font-weight: 100;
 }
 
 .end-session-dialog-app-list-item-description {
-    color: #cccccc;
+    color: @texten;
     font-size: 10pt;
 }
 
@@ -228,7 +228,7 @@
 
 .prompt-dialog-headline {
     font-size: 12pt;
-    font-weight: normal;
+    font-weight: 100;
     color: #666666;
 }
 

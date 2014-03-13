@@ -1,5 +1,10 @@
 /* PopupMenu */
 
+
+.popup-menu {
+    min-width: 100px;
+}
+
 .popup-menu-ornament {
     text-align: right;
     width: 1em;
@@ -10,13 +15,9 @@
     -arrow-border-radius: 2px;
     -arrow-background-color: @dark;
     -arrow-border-color: @darken;
-    -arrow-border-width: 1px;
+    -arrow-border-width: 0.5px;
     -arrow-base: 20px;
     -arrow-rise: 10px;
-}
-
-.popup-menu {
-    min-width: 200px;
 }
 
 .unicode-arrow {
@@ -48,6 +49,7 @@
 }
 
 .popup-menu-item {
+    font-weight: 100;
     spacing: 10px;
 }
 
@@ -64,6 +66,7 @@
 }
 
 .popup-menu-item:insensitive {
+    font-weight: 100;
     color: @texten;
 }
 
@@ -84,19 +87,21 @@
 }
 
 .popup-alternating-menu-item:alternate {
-    font-weight: normal;
+    font-weight: 100;
 }
 
 .popup-status-menu-item {
-    font-weight: normal;
+    font-weight: 100;
     color: @texten;
 }
 
 .popup-inactive-menu-item {
-    color: @text;
+    font-weight: 100;
+    color: @text
 }
 
 .popup-inactive-menu-item:insensitive {
+    font-weight: 100;
     color: @texten;
 }
 

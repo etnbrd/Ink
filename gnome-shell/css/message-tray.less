@@ -1,18 +1,21 @@
+@height: 40px;
+
 /* Message Tray */
 #message-tray {
-  background: @dark;
-  height: 72px;
+  background: @darken;
+  height: @height;
+    font-weight: 100;
 }
 
 .message-tray-summary {
-  height: 72px;
+  height: @height;
 }
 
 .message-tray-menu-button {
   StIcon {
     padding: 0 20px;
     color: @text;
-    icon-size: 24px;
+    icon-size: 14px;
   }
 
   &:hover StIcon,

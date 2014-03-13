@@ -38,7 +38,8 @@
 
 /* default text style */
 stage {
-    font-family: "Roboto Thin", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-wieght: 100;
     font-size: 10pt;
     color: @text;
 }
@@ -72,18 +73,18 @@ stage {
 
 @import "css/elements";
 @import "css/popup";
-@import "css/network.css";
+@import "css/network";
 @import "css/buttons";
 @import "css/entries";
 @import "css/panel";
-@import "css/overview.css";
 
+@import "css/modal-dialogs.less"; // TODO
+@import "css/overview.css"; // TODO
 @import "css/looking-glass.css";
 @import "css/calendar";
 @import "css/message-tray";
 @import "css/app-switcher.css";
 @import "css/workspace-switcher.css";
-@import "css/modal-dialogs.css";
 @import "css/keyboard.css";
 @import "css/login-dialog.css";
 @import "css/screen-shield.less";
@@ -145,6 +146,7 @@ stage {
 
 #searchEntry {
     width: 320px;
+    border-radius: 0px;
 }
 
 .search-entry-icon {

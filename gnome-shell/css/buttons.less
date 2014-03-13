@@ -1,5 +1,7 @@
 /* Buttons */
 
+@border-radius: 1px;
+
 .candidate-page-button,
 .notification-button,
 .notification-icon-button,
@@ -9,8 +11,8 @@
 .app-view-control,
 .system-menu-action {
     background-color: @light;
-    border-radius: 2px;
-    font-weight: normal;
+    border-radius: @border-radius;
+    font-weight: 100;
 }
 
 .candidate-page-button:hover,
@@ -58,10 +60,11 @@
 }
 
 .system-menu-action {
-  padding: 14px;
+  padding: 7px;
   color: @text;
+  border-radius: @border-radius;
 
   & > StIcon {
-    icon-size: 20px;
+    icon-size: 12px;
   }
 }
