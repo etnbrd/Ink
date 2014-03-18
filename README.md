@@ -46,8 +46,16 @@ cp -r Ink /usr/share/gnome-shell/theme
 
 ## Compilation
 
+### gnome-shell
+
 To compile and reload the theme from command line :
 
 ```
 lessc gnome-shell.less gnome-shell.css && gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();'
+```
+
+### sublime-text
+
+```
+zip -r Ink.sublime-package Ink
 ```
