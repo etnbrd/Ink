@@ -1,4 +1,3 @@
-var hb = require('handlebars');
 var fs = require('fs');
 
 var te = function(tpl, data) {
