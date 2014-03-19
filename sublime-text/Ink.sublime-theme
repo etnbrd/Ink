@@ -67,7 +67,7 @@
     // Tab close button
     {
         "class": "tab_close_button",
-        "layer0.texture": "Ink/assets/close@2x.png",
+        "layer0.texture": "Theme - Ink/assets/close@2x.png",
         "layer0.opacity": 0,
         "layer0.tint": <<color03>> // 03
     },
@@ -79,7 +79,7 @@
     {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control","attributes": ["hover"]}],
-        "layer0.texture": "Ink/assets/close@2x.png",
+        "layer0.texture": "Theme - Ink/assets/close@2x.png",
         "layer0.opacity": 1
     },
     {
@@ -98,7 +98,7 @@
     {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control","attributes": ["dirty"]}],
-        "layer0.texture": "Ink/assets/circle@2x.png",
+        "layer0.texture": "Theme - Ink/assets/circle@2x.png",
         "layer0.tint": <<color0A>>, // 0A
         "layer0.opacity": 1
     },
@@ -112,7 +112,7 @@
     {
         "class": "tab_close_button",
         "parents": [{"class": "tab_control","attributes": ["dirty","hover"]}],
-        "layer0.texture": "Ink/assets/close@2x.png",
+        "layer0.texture": "Theme - Ink/assets/close@2x.png",
         "attributes": ["hover"],
         "layer0.opacity": 1,
         "layer0.tint": <<color08>> // 08
@@ -172,7 +172,7 @@
 
     {
         "class": "fold_button_control",
-        "layer0.texture": "Ink/assets/folder-closed@2x.png",
+        "layer0.texture": "Theme - Ink/assets/folder-closed@2x.png",
         "layer0.tint": <<color04>>, // 04
         "layer0.opacity": 0.5,
         "layer0.inner_margin": 0,
@@ -186,7 +186,7 @@
     {
         "class": "fold_button_control",
         "attributes": ["expanded"],
-        "layer0.texture": "Ink/assets/folder-open@2x.png"
+        "layer0.texture": "Theme - Ink/assets/folder-open@2x.png"
     },
     {
         "class": "fold_button_control",
@@ -493,7 +493,7 @@
     // Sidebar file close
     {
         "class": "close_button",
-        "layer0.texture": "Ink/assets/close@2x.png",
+        "layer0.texture": "Theme - Ink/assets/close@2x.png",
         "layer0.opacity": 0,
         "layer0.inner_margin": 0,
         "layer0.tint": <<color03>>, // 03
@@ -513,7 +513,7 @@
     {
         "class": "close_button",
         "attributes": ["dirty"],
-        "layer0.texture": "Ink/assets/circle@2x.png",
+        "layer0.texture": "Theme - Ink/assets/circle@2x.png",
         "layer0.opacity": 1,
         "layer0.tint": <<color0A>> // 0A
     },
@@ -521,7 +521,7 @@
         "class": "close_button",
         "attributes": ["dirty"],
         "parents": [{"class": "tree_row","attributes": ["selected"]}],
-        "layer0.texture": "Ink/assets/circle@2x.png"
+        "layer0.texture": "Theme - Ink/assets/circle@2x.png"
     },
     // Sidebar file close hover
     {
@@ -533,7 +533,7 @@
         "class": "close_button",
         "attributes": ["dirty", "hover"],
         "parents": [{"class": "tree_row","attributes": ["hover"]}],
-        "layer0.texture": "Ink/assets/close@2x.png",
+        "layer0.texture": "Theme - Ink/assets/close@2x.png",
         "layer0.tint": <<color08>> // 08
     },
 
@@ -545,7 +545,7 @@
     {
         "class": "disclosure_button_control",
         "content_margin": [8,8],
-        "layer0.texture": "Ink/assets/folder-closed@2x.png",
+        "layer0.texture": "Theme - Ink/assets/folder-closed@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "layer0.inner_margin": 0
@@ -563,7 +563,7 @@
     {
         "class": "disclosure_button_control",
         "settings": ["soda_folder_icons"],
-        "layer0.texture": "Ink/assets/folder-closed@2x.png"
+        "layer0.texture": "Theme - Ink/assets/folder-closed@2x.png"
     },
     {
         "class": "disclosure_button_control",
@@ -574,13 +574,13 @@
         "class": "disclosure_button_control",
         "settings": ["soda_folder_icons"],
         "parents": [{"class": "tree_row","attributes": ["selected"]}],
-        "layer0.texture": "Ink/assets/folder-closed@2x.png"
+        "layer0.texture": "Theme - Ink/assets/folder-closed@2x.png"
     },
     // Sidebar group open
     {
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
-        "layer0.texture": "Ink/assets/folder-open@2x.png"
+        "layer0.texture": "Theme - Ink/assets/folder-open@2x.png"
     },
     {
         "class": "disclosure_button_control",
@@ -591,28 +591,28 @@
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
         "parents": [{"class": "tree_row","attributes": ["selected"]}],
-        "layer0.texture": "Ink/assets/folder-open@2x.png"
+        "layer0.texture": "Theme - Ink/assets/folder-open@2x.png"
     },
     // Sidebar folder open
     {
         "class": "disclosure_button_control",
         "settings": ["soda_folder_icons"],
         "attributes": ["expanded"],
-        "layer0.texture": "Ink/assets/folder-open@2x.png"
+        "layer0.texture": "Theme - Ink/assets/folder-open@2x.png"
     },
     {
         "class": "disclosure_button_control",
         "settings": ["soda_folder_icons"],
         "attributes": ["expanded"],
         "parents": [{"class": "tree_row","attributes": ["hover"]}],
-        "layer0.texture": "Ink/assets/folder-open@2x.png"
+        "layer0.texture": "Theme - Ink/assets/folder-open@2x.png"
     },
     {
         "class": "disclosure_button_control",
         "settings": ["soda_folder_icons"],
         "attributes": ["expanded"],
         "parents": [{"class": "tree_row","attributes": ["selected"]}],
-        "layer0.texture": "Ink/assets/folder-open@2x.png"
+        "layer0.texture": "Theme - Ink/assets/folder-open@2x.png"
     },
 
 //
@@ -838,7 +838,7 @@
     // Regex search button
     {
         "class": "icon_regex",
-        "layer0.texture": "Ink/assets/regex@2x.png",
+        "layer0.texture": "Theme - Ink/assets/regex@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
@@ -852,7 +852,7 @@
     // Case sensitive search button
     {
         "class": "icon_case",
-        "layer0.texture": "Ink/assets/casesens@2x.png",
+        "layer0.texture": "Theme - Ink/assets/casesens@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
@@ -865,7 +865,7 @@
     // Match whole word search button
     {
         "class": "icon_whole_word",
-        "layer0.texture": "Ink/assets/wholeword@2x.png",
+        "layer0.texture": "Theme - Ink/assets/wholeword@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
@@ -883,7 +883,7 @@
     // Show search context button
     {
         "class": "icon_context",
-        "layer0.texture": "Ink/assets/context@2x.png",
+        "layer0.texture": "Theme - Ink/assets/context@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
@@ -896,7 +896,7 @@
     // Use search buffer
     {
         "class": "icon_use_buffer",
-        "layer0.texture": "Ink/assets/buffer@2x.png",
+        "layer0.texture": "Theme - Ink/assets/buffer@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
@@ -913,7 +913,7 @@
     // Reverse search direction button (ST2 only)
     {
         "class": "icon_reverse",
-        "layer0.texture": "Ink/assets/reverse@2x.png",
+        "layer0.texture": "Theme - Ink/assets/reverse@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
@@ -926,7 +926,7 @@
     // Search wrap button
     {
         "class": "icon_wrap",
-        "layer0.texture": "Ink/assets/wrap@2x.png",
+        "layer0.texture": "Theme - Ink/assets/wrap@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
@@ -939,7 +939,7 @@
     // Search in selection button
     {
         "class": "icon_in_selection",
-        "layer0.texture": "Ink/assets/selection@2x.png",
+        "layer0.texture": "Theme - Ink/assets/selection@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
@@ -957,7 +957,7 @@
     // Preserve case button
     {
         "class": "icon_preserve_case",
-        "layer0.texture": "Ink/assets/lock@2x.png",
+        "layer0.texture": "Theme - Ink/assets/lock@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
@@ -975,7 +975,7 @@
     // Highlight results button
     {
         "class": "icon_highlight",
-        "layer0.texture": "Ink/assets/highlight@2x.png",
+        "layer0.texture": "Theme - Ink/assets/highlight@2x.png",
         "layer0.tint": <<color02>>, // 02
         "layer0.opacity": 1,
         "content_margin": 8
