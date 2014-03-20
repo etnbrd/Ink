@@ -50,7 +50,7 @@
         "class": "tab_control",
         "attributes": ["selected"],
         "layer0.texture": "",
-        "layer0.tint": <<color00>> // 00
+        "layer0.tint": <<color-00>> // 00
     },
     // Tab dirty state (close button hidden)
     {

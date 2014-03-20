@@ -57,5 +57,5 @@ lessc gnome-shell.less gnome-shell.css && gdbus call --session --dest org.gnome.
 ### sublime-text
 
 ```
-zip -r Ink.sublime-package Ink
+node make.js && cd Ink && zip -r ../Ink.sublime-package * && cd ..
 ```
