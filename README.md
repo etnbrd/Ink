@@ -1,34 +1,42 @@
 ![Ink](logo.png)
 
-
-
-A gnome-shell 3.10 theme simply written, in Less.
-
----
-
-Two things about gnome-shell theming :
-
-+ It's amazing to use CSS to render themes.
-+ gnome-shell themes are usually a mess, because one big file is hard to read and maintain.
-
-Less might help us avoid mess.
-
----
-
-Original idea :
-http://worldofgnome.org/create-a-gnome-shell-theme-with-less-stylesheets/
-
----
+A dark, flat, minimalist theme for great tools.
+And customizable to suit your needs.
 
 This is a work in progress, but you can already use it, and issue bug reports.
+
+Include :
+
++ gnome-shell 3.10.4
++ mutter (metacity 1 & 2)
++ gtk 3
++ sublime-text 3
++ firefox
++ shell
++ markdown
 
 ## Screens
 
 ![Screenshot calendar](https://raw.github.com/etnbrd/Ink/master/screens/screen-calendar.png)
 ![Screenshot system menu](https://raw.github.com/etnbrd/Ink/master/screens/screen-sys.png)
 
+## 1. Modify
 
-## Installation
+Open `Ink.yaml`.
+Modify the color scheme, and the installation path
+
+## 2. Build
+
+`grunt build`
+
+## 3. Install
+
+`grunt install`
+
+
+---
+
+## dev notes
 
 If you install this theme locally, you won't be able to change the login window and the screen-shield, but if something goes wrong, you're safely backed-up by the default theme.
 If you install this theme for your whole system, you might have to enter some command on one of your tty to get the defualt theme back.
