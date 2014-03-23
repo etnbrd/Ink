@@ -1,4 +1,6 @@
-# Ink
+![Ink](logo.png)
+
+
 
 A gnome-shell 3.10 theme simply written, in Less.
 
