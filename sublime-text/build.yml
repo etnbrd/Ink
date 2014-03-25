@@ -1,0 +1,5 @@
+template:
+  'Ink.sublime-theme'
+
+build:
+  'build command'

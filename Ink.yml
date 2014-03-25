@@ -1,0 +1,70 @@
+colors:
+  C00: rgb(  0,   0,   0)
+  C01: [ 33,  33,  33]
+  C02: []
+  C03: []
+  C04: []
+  C05: []
+  C06: []
+  C07: []
+  C08: []
+  C09: []
+  C10: []
+  C11: []
+  C12: []
+  C13: []
+  C14: []
+  C15: []
+
+themes:
+  - gnome-shell
+  # - metacity
+  # - sublime-text
+  # - firefox
+  # - sh
+  # - gtk
+  # - markdown
+
+
+
+
+
+# {
+# 	'color-01': "[ 33,   33,  33]",  // light
+# 	'color-00': "[ 23,   23,  23]",  // dark
+# 	'color00':  "[ 50,   50,  50]",  // texter
+# 	'color01':  "[ 59,   59,  59]",  // lighten
+# 	'color02':  "[120,  120, 120]",  // texten
+#  	'color03':  "[120,  120, 120]",  // texten
+# 	'color04':  "[120,  120, 120]",  // texten
+# 	'color05':  "[200,  200, 200]",  // text mod
+# 	'color06':  "[225,  225, 225]",  // text
+# 	'color07':  "[255,  255, 255]",  // text
+# 	'color08':  "[251,    2,  96]",  // warn
+# 	'color0A':  "[  2,  196, 251]",  // high
+# 	'color0C':  "[230,  230, 230]",  // new
+
+#  	'color03a':  "[120,  120, 120, 255]",  // textena
+# 	'color04a':  "[120,  120, 120, 255]",  // texten
+# 	'color05a':  "[200,  200, 200, 255]",  // text mod
+# 	'color06a':  "[225,  225, 225, 255]",  // text
+# 	'color07a':  "[255,  255, 255, 255]",  // text
+# }
+
+
+
+# // @dark: rgb(23, 23, 23);
+# // @darken: rgb(0, 0, 0);
+
+# // @light: rgb(33, 33, 33);
+# // @lighten: 59, 59, 59;
+
+# // @high: rgb(2, 196, 251);
+
+# // @warn: rgb(251, 2, 96);
+
+
+
+# // @text: rgb(255, 255, 255);
+# // @texten: rgb(120, 120, 120);
+# // @texter: rgb(50, 50, 50);
