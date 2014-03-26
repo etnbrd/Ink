@@ -5,5 +5,8 @@
   "dependencies": {
     "onecolor": "*"
   },
+  "optionalDependencies": {
+  	"less": "*"
+  },
   "engine": "node >=10.0.0"
 }

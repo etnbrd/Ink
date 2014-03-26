@@ -1,5 +1,9 @@
 template:
   'gnome-shell.less'
 
-build:
-  'build command'
+less:
+  'gnome-shell.less'
+
+install:
+  - 'gnome-shell.css'
+  - 'assets'
