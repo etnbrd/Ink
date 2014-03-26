@@ -12,26 +12,30 @@ var templateEngine = function(tpl, data) {
     return tpl;
 }
 
-function write(path, name) {
+function write(path, src, name) {
+
 
 	var file = fs.readFileSync(path + '/' + name);
 	var content = templateEngine('' + file, context);
+	src = src || '';
 
-	fs.writeFileSync(path + '/src/' + name, content);
+	fs.writeFileSync(path + '/' + src + '/' + name, content);
 }
 
-function less(path, src, dest) {
+function less(path, name, dest) {
+
+
 	var less = require('less');
-	var file = '' + fs.readFileSync(path + '/src/' + src);
+	var file = '' + fs.readFileSync(path + '/' + name);
 
 	if (!dest) {
 		var re = /.less$/;
-		dest = src.replace(re.exec(src), ".css");
+		dest = name.replace(re.exec(name), ".css");
 	}
 
 	var parser = new(less.Parser)({
-	  paths: [path + '/src/'], // Specify search paths for @import directives
-	  filename: src // Specify a filename, for better error messages
+	  paths: [path + '/'], // Specify search paths for @import directives
+	  filename: name // Specify a filename, for better error messages
 	});
 
 	parser.parse(file, function (e, tree) {
@@ -47,7 +51,7 @@ function less(path, src, dest) {
 		    compress: true
 		  });
 
-		  fs.writeFileSync(path + '/src/' + dest, css);
+		  fs.writeFileSync(path + '/' + dest, css);
 		}
 	});
 }
@@ -63,20 +67,22 @@ function build(theme) {
 
 		if (build.template instanceof Array) {
 			for (var i = build.template.length - 1; i >= 0; i--) {
-				write(theme, build.template[i]);
+				write(theme,build.src, build.template[i]);
 			};
 		} else {
-			write(theme, build.template);
+			write(theme,build.src, build.template);
 		}
 
 		// LESS
 		if (build.less) {
+			build.src = build.src || '';
+
 			if (build.less instanceof Array) {
 				for (var i = build.less.length - 1; i >= 0; i--) {
-					less(theme, build.less[i]);
+					less(theme + '/' + build.src, build.less[i]);
 				};
 			} else {
-				less(theme, build.less);
+				less(theme + '/' + build.src, build.less);
 			}
 		}
 	}

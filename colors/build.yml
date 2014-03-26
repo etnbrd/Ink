@@ -1,0 +1,8 @@
+src:
+  'src'
+
+template:
+  'colors.less'
+
+less:
+  'colors.less'
