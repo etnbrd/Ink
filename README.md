@@ -32,3 +32,8 @@ The template files might contain some refrence to the colors in Ink.yml, like th
 `sudo id && node build.js`
 For the moment, we need sudo privileges without entering the password.
 See build.js:80
+
+## TODOS
+
++ Fix the sudo shit (build.js:80)
++ Why two build phase are needed to apply gnome-shell theme ?

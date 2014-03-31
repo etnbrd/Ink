@@ -83,10 +83,15 @@ function install(src, dest, load) {
 		},
 		function() {
 			console.log('' + buffer);
+
+			console.log("install done");
+
 			var sep = load.indexOf(" ");
 			var cmd = load.substring(0, sep);
 			var args = load.substring(sep + 1).split(" ");
-			new run_cmd(cmd, args);
+			new run_cmd(cmd, args, undefined, function() {
+				console.log("load done");
+			});
 		})
 }
 
@@ -110,6 +115,8 @@ function build(theme) {
 			write(theme,build.src, build.template);
 		}
 
+		console.log("template done");
+
 		// LESS
 		if (build.less) {
 			if (build.less instanceof Array) {
@@ -120,6 +127,8 @@ function build(theme) {
 				less(theme + '/' + build.src, build.less);
 			}
 		}
+
+		console.log("less done");
 
 		// INSTALL
 		if (build.install) {
