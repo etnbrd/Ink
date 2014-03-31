@@ -56,6 +56,42 @@ function less(path, name, dest) {
 	});
 }
 
+
+function run_cmd(cmd, args, cb, end) {
+
+	args = args || [];
+	console.log("  > ", cmd, args.join(' '));
+
+  var child = require('child_process').spawn(cmd, args);
+
+  child.stdout.on('data', function(buffer) {console.log('' + buffer)});
+	child.stdout.on('end', end || function() {console.log('done')});
+	child.stderr.on('data', function(buffer) {console.error('' + buffer)});
+}
+
+function install(src, dest, load) {
+
+	src.unshift('-avzh');
+	src.unshift('rsync');
+	src.push(dest);
+
+	var buffer = '';
+
+	new run_cmd('sudo', src, // TODO the sudo shit, run sudo rsync, instead of rsync because of privileges in the destination folder : /usr/share ...
+		function(buf){
+			buffer += '  ' + buf;
+		},
+		function() {
+			console.log('' + buffer);
+			var sep = load.indexOf(" ");
+			var cmd = load.substring(0, sep);
+			var args = load.substring(sep + 1).split(" ");
+			new run_cmd(cmd, args);
+		})
+}
+
+
+
 function build(theme) {
 	return function _build(err, file) {
 
@@ -63,8 +99,9 @@ function build(theme) {
 
 		var build = yaml.safeLoad(fs.readFileSync(theme + '/build.yml', 'utf8'));
 
-		// TEMPLATE
+		build.src = build.src || 'src/';
 
+		// TEMPLATE
 		if (build.template instanceof Array) {
 			for (var i = build.template.length - 1; i >= 0; i--) {
 				write(theme,build.src, build.template[i]);
@@ -75,8 +112,6 @@ function build(theme) {
 
 		// LESS
 		if (build.less) {
-			build.src = build.src || '';
-
 			if (build.less instanceof Array) {
 				for (var i = build.less.length - 1; i >= 0; i--) {
 					less(theme + '/' + build.src, build.less[i]);
@@ -85,11 +120,33 @@ function build(theme) {
 				less(theme + '/' + build.src, build.less);
 			}
 		}
+
+		// INSTALL
+		if (build.install) {
+			if (build.install.src && build.install.dest) {
+
+				var src = [];
+
+				if(build.install.src instanceof Array)
+					for (var i = build.install.src.length - 1; i >= 0; i--) {
+						src.push(theme + '/' + build.src + '/' + build.install.src[i]);
+					}
+				else
+					src.push(theme + '/' + build.src + '/' + build.install.src);
+
+
+				install(src, build.install.dest, build.load);
+
+			} else {
+				console.error("Install error : src or dest not defined", build.install.src, build.install.dest);
+			}
+		}
 	}
 }
 
 
 // MAIN
+
 
 var context = yaml.safeLoad(fs.readFileSync('Ink.yml', 'utf8'));
 
@@ -97,6 +154,6 @@ for (var c in context.colors) {
 	context.colors[c] = color(context.colors[c]);
 };
 
-for (var i = context.themes.length - 1; i >= 0; i--) {
+if (context.themes) for (var i = context.themes.length - 1; i >= 0; i--) {
 	fs.readFile(context.themes[i] + '/build.yml', build(context.themes[i]));
 };

@@ -22,50 +22,13 @@ Include :
 
 ## 1. Modify
 
-Open `Ink.yaml`.
-Modify the color scheme, and the installation path
+The colors and the themes to build are in the file `Ink.yml`
+Each teheme is a directory containing a `build.yml` file, one or more template files and a `src` directory.
+This `src` directory should contain the final theme to be installed.
+The template files might contain some refrence to the colors in Ink.yml, like this : `<<colors.C00.css()>>`.
 
-## 2. Build
+## 2. Build & Install
 
-`grunt build`
-
-## 3. Install
-
-`grunt install`
-
-
----
-
-## dev notes
-
-If you install this theme locally, you won't be able to change the login window and the screen-shield, but if something goes wrong, you're safely backed-up by the default theme.
-If you install this theme for your whole system, you might have to enter some command on one of your tty to get the defualt theme back.
-
-#### Local (safe)
-```
-git clone https://github.com/etnbrd/Ink.git
-cp -r Ink ~/.local/share/theme 
-```
-
-#### Global (riskier)
-```
-git clone https://github.com/etnbrd/Ink.git
-sudo mv /usr/share/gnome-shell/theme /usr/share/gnome-shell/theme.old
-cp -r Ink /usr/share/gnome-shell/theme
-```
-
-## Compilation
-
-### gnome-shell
-
-To compile and reload the theme from command line :
-
-```
-lessc gnome-shell.less gnome-shell.css && gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();'
-```
-
-### sublime-text
-
-```
-node make.js && cd Ink && zip -r ../Ink.sublime-package * && cd ..
-```
+`sudo id && node build.js`
+For the moment, we need sudo privileges without entering the password.
+See build.js:80

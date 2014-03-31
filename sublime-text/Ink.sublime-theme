@@ -8,7 +8,7 @@
     {
         "class": "tabset_control",
         "layer0.texture": "",
-        "layer0.tint": <<colors.C00.css()>>, // -00
+        "layer0.tint": rgb(0,0,0), // -00
         "layer0.inner_margin": 0,
         "layer0.opacity": 1,
         "content_margin": 0,
@@ -30,7 +30,7 @@
         "max_margin_trim": 0,
         "hit_test_level": 0,
         "layer0.texture": "",
-        "layer0.tint": <<color-00>>, // -00
+        "layer0.tint": NaN, // -00
         "layer0.inner_margin": [5,5],
         "layer0.opacity": 1
     },
@@ -50,7 +50,7 @@
         "class": "tab_control",
         "attributes": ["selected"],
         "layer0.texture": "",
-        "layer0.tint": <<color-00>> // 00
+        "layer0.tint": NaN // 00
     },
     // Tab dirty state (close button hidden)
     {
@@ -69,7 +69,7 @@
         "class": "tab_close_button",
         "layer0.texture": "Theme - Ink/assets/close@2x.png",
         "layer0.opacity": 0,
-        "layer0.tint": <<color03>> // 03
+        "layer0.tint": undefined // 03
     },
     {
         "class": "tab_close_button",
@@ -87,7 +87,7 @@
         "parents": [{"class": "tab_control"}],
         "attributes": ["hover"],
         "layer0.opacity": 1,
-        "layer0.tint": <<color08>> // 08
+        "layer0.tint": undefined // 08
     },
     {
         "class": "tab_close_button",
@@ -99,7 +99,7 @@
         "class": "tab_close_button",
         "parents": [{"class": "tab_control","attributes": ["dirty"]}],
         "layer0.texture": "Theme - Ink/assets/circle@2x.png",
-        "layer0.tint": <<color0A>>, // 0A
+        "layer0.tint": undefined, // 0A
         "layer0.opacity": 1
     },
     {
@@ -115,7 +115,7 @@
         "layer0.texture": "Theme - Ink/assets/close@2x.png",
         "attributes": ["hover"],
         "layer0.opacity": 1,
-        "layer0.tint": <<color08>> // 08
+        "layer0.tint": undefined // 08
     },
     {
         "class": "tab_close_button",
@@ -153,17 +153,17 @@
     {
         "class": "tab_label",
         "fade": true,
-        "fg": <<color03>> // 03
+        "fg": undefined // 03
     },
     {
         "class": "tab_label",
         "parents": [{"class": "tab_control","attributes": ["hover"]}],
-        "fg": <<color05>> // 05
+        "fg": undefined // 05
     },
     {
         "class": "tab_label",
         "parents": [{"class": "tab_control","attributes": ["selected"]}],
-        "fg": <<color06>> // 06
+        "fg": undefined // 06
     },
 
 //
@@ -173,7 +173,7 @@
     {
         "class": "fold_button_control",
         "layer0.texture": "Theme - Ink/assets/folder-closed@2x.png",
-        "layer0.tint": <<color04>>, // 04
+        "layer0.tint": undefined, // 04
         "layer0.opacity": 0.5,
         "layer0.inner_margin": 0,
         "content_margin": [8,8]
@@ -201,7 +201,7 @@
     {
         "class": "scroll_bar_control",
         "layer0.texture": "",
-        "layer0.tint": <<color-01>>, // -01
+        "layer0.tint": NaN, // -01
         "layer0.opacity": 1,
         "layer0.inner_margin": [0,0],
         "blur": true
@@ -211,7 +211,7 @@
         "class": "scroll_bar_control",
         "attributes": ["horizontal"],
         "layer0.texture": "",
-        "layer0.tint": <<color-01>>, // -01
+        "layer0.tint": NaN, // -01
         "layer0.inner_margin": [0,0],
         "blur": true
     },
@@ -219,7 +219,7 @@
     {
         "class": "scroll_corner_control",
         "layer0.texture": "",
-        "layer0.tint": <<color-01>>, // -01
+        "layer0.tint": NaN, // -01
         "layer0.inner_margin": [0,0],
         "layer0.opacity": 1
     },
@@ -227,7 +227,7 @@
     {
         "class": "puck_control",
         "layer0.texture": "",
-        "layer0.tint": <<color01>>, // 01
+        "layer0.tint": undefined, // 01
         "layer0.opacity": 1,
         "layer0.inner_margin": [0,0],
         "content_margin": [6,0],
@@ -238,7 +238,7 @@
         "class": "puck_control",
         "attributes": ["horizontal"],
         // "layer0.texture": "",
-        "layer0.tint": <<color01>>, // 01
+        "layer0.tint": undefined, // 01
         "layer0.inner_margin": [0,0],
         "content_margin": [12,6],
         "blur": false
@@ -264,7 +264,7 @@
         "class": "scroll_bar_control",
         "settings": ["overlay_scroll_bars"],
         // "layer0.texture": "",
-        "layer0.tint": <<color00>>, // 00
+        "layer0.tint": undefined, // 00
         "layer0.inner_margin": [0,5],
         "layer0.opacity": 0,
         "blur": false
@@ -303,7 +303,7 @@
         "settings": ["overlay_scroll_bars"],
         "attributes": ["dark"],
         // "layer0.texture": "",
-        "layer0.tint": <<color02>> // 02
+        "layer0.tint": undefined // 02
 
     },
     // Overlay light horizontal puck (for dark content)
@@ -312,7 +312,7 @@
         "settings": ["overlay_scroll_bars"],
         "attributes": ["horizontal","dark"],
         // "layer0.texture": "",
-        "layer0.tint": <<color02>> // 02
+        "layer0.tint": undefined // 02
     },
 
 //
@@ -321,7 +321,7 @@
 
     {
         "class": "sheet_container_control",
-        "layer0.tint": <<color00>>,
+        "layer0.tint": undefined,
         "layer0.opacity": 1
     },
 
@@ -332,7 +332,7 @@
     {
         "class": "grid_layout_control",
         "border_size": 1,
-        "border_color": <<color-00>> // -00
+        "border_color": NaN // -00
     },
 
 //
@@ -351,7 +351,7 @@
     // General labels
     {
         "class": "label_control",
-        "color": <<color03>> // 03
+        "color": undefined // 03
     },
     // Text field labels
     {
@@ -363,7 +363,7 @@
         "class": "label_control",
         "parents": [{"class": "button_control"}],
         "font.bold": true,
-        "color": <<color0C>> // 0C
+        "color": undefined // 0C
     },
 
 //
@@ -374,7 +374,7 @@
     {
         "class": "tool_tip_control",
         // "layer0.texture": "",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.inner_margin": [1,1],
         "layer0.opacity": 1,
         "content_margin": [4,4]
@@ -382,7 +382,7 @@
     // Tooltip content
     {
         "class": "tool_tip_label_control",
-        "color": <<color07>> // 07
+        "color": undefined // 07
     },
 
 //
@@ -393,7 +393,7 @@
     {
         "class": "status_bar",
         "layer0.texture": "",
-        "layer0.tint": <<color-00>>, // -00
+        "layer0.tint": NaN, // -00
         "layer0.opacity": 1,
         "content_margin": 4
     },
@@ -406,7 +406,7 @@
     {
         "class": "label_control",
         "parents": [{"class": "status_bar"}],
-        "color": <<color02>> // 02
+        "color": undefined // 02
     },
 
 //
@@ -418,7 +418,7 @@
         "class": "sidebar_container",
         "layer0.texture": "",
         "layer0.opacity": 1,
-        "layer0.tint": <<color-01>>, // -01
+        "layer0.tint": NaN, // -01
         "layer0.inner_margin": [1,5,2,1],
         "content_margin": [0,4,0,0]
     },
@@ -435,7 +435,7 @@
     {
         "class": "tree_row",
         // "layer0.texture": "",
-        "layer0.tint": <<color01>>, // 01
+        "layer0.tint": undefined, // 01
         "layer0.opacity": 0,
         "layer0.inner_margin": [1,1]
     },
@@ -448,7 +448,7 @@
     // Sidebar heading
     {
         "class": "sidebar_heading",
-        "color": <<color02>>, // 02
+        "color": undefined, // 02
         "font.bold": true
     },
     // Sidebar heading selected
@@ -460,18 +460,18 @@
     // Sidebar entry
     {
         "class": "sidebar_label",
-        "color": <<color03>> // 03
+        "color": undefined // 03
     },
     // Sidebar folder entry
     {
         "class": "sidebar_label",
         "parents": [{"class": "tree_row","attributes": ["expandable"]}],
-        "color": <<color03>> // 03
+        "color": undefined // 03
     },
     {
         "class": "sidebar_label",
         "parents": [{"class": "tree_row","attributes": ["hover"]}],
-        "color": <<color05>> // 05
+        "color": undefined // 05
     },
     {
         "class": "sidebar_label",
@@ -483,7 +483,7 @@
     {
         "class": "sidebar_label",
         "parents": [{"class": "tree_row","attributes": ["selected"]}],
-        "color": <<color06>> // 06
+        "color": undefined // 06
     },
 
 //
@@ -496,7 +496,7 @@
         "layer0.texture": "Theme - Ink/assets/close@2x.png",
         "layer0.opacity": 0,
         "layer0.inner_margin": 0,
-        "layer0.tint": <<color03>>, // 03
+        "layer0.tint": undefined, // 03
         "content_margin": [8,8]
     },
     {
@@ -515,7 +515,7 @@
         "attributes": ["dirty"],
         "layer0.texture": "Theme - Ink/assets/circle@2x.png",
         "layer0.opacity": 1,
-        "layer0.tint": <<color0A>> // 0A
+        "layer0.tint": undefined // 0A
     },
     {
         "class": "close_button",
@@ -527,14 +527,14 @@
     {
         "class": "close_button",
         "attributes": ["hover"],
-        "layer0.tint": <<color08>> // 08
+        "layer0.tint": undefined // 08
     },
     {
         "class": "close_button",
         "attributes": ["dirty", "hover"],
         "parents": [{"class": "tree_row","attributes": ["hover"]}],
         "layer0.texture": "Theme - Ink/assets/close@2x.png",
-        "layer0.tint": <<color08>> // 08
+        "layer0.tint": undefined // 08
     },
 
 //
@@ -546,14 +546,14 @@
         "class": "disclosure_button_control",
         "content_margin": [8,8],
         "layer0.texture": "Theme - Ink/assets/folder-closed@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "layer0.inner_margin": 0
     },
     {
         "class": "disclosure_button_control",
         "parents": [{"class": "tree_row","attributes": ["hover"]}],
-        "layer0.tint":<<color04>> // 04
+        "layer0.tint":undefined // 04
     },
     {
         "class": "disclosure_button_control",
@@ -626,7 +626,7 @@
         "min_size": [64,0],
         // "layer0.texture": "",
         "layer0.opacity": 1,
-        "layer0.tint": <<color-00>>, // -00
+        "layer0.tint": NaN, // -00
         "layer0.inner_margin": [8,8]
     },
     // Hover button state
@@ -634,14 +634,14 @@
         "class": "button_control",
         "attributes": ["hover"],
         // "layer0.texture": "",
-        "layer0.tint": <<color-01>> // -01
+        "layer0.tint": NaN // -01
     },
     // Pressed button state
     {
         "class": "button_control",
         "attributes": ["pressed"],
         // "layer0.texture": "",
-        "layer0.tint": <<color-00>> // -00
+        "layer0.tint": NaN // -00
     },
 //
 // TEXT INPUT FIELD
@@ -651,7 +651,7 @@
     {
         "class": "text_line_control",
         // "layer0.texture": "",
-        "layer0.tint": <<color-00>>, // -01
+        "layer0.tint": NaN, // -01
         "layer0.opacity": 1,
         "content_margin": 6
     },
@@ -666,7 +666,7 @@
         // "layer0.texture": "",
         "layer0.inner_margin": [0,0],
         "layer0.opacity": 1,
-        "layer0.tint": <<color-00>>, // -00
+        "layer0.tint": NaN, // -00
         "content_margin": 0
     },
     // Quick panel background
@@ -674,7 +674,7 @@
         "class": "overlay_control",
         "layer0.opacity": 1,
         // "layer1.texture": "",
-        "layer1.tint": <<color01>>, // 01
+        "layer1.tint": undefined, // 01
         "layer1.inner_margin": [0,0,0,0],
         "layer1.opacity": 1,
         "content_margin": 0
@@ -687,14 +687,14 @@
     {
         "class": "quick_panel",
         "row_padding": 8,
-        "layer0.tint": <<color01>>,
+        "layer0.tint": undefined,
         "layer0.opacity": 1,
         "dark_content": true
     },
     {
         "class": "quick_panel_row",
         // "layer0.texture": "",
-        "layer0.tint": <<color01>>, // 01
+        "layer0.tint": undefined, // 01
         "layer0.inner_margin": 8,
         "layer0.opacity": 1
     },
@@ -702,26 +702,26 @@
         "class": "quick_panel_row",
         "attributes": ["selected"],
         // "layer0.texture": "",
-        "layer0.tint": <<color-01>> // -01
+        "layer0.tint": NaN // -01
     },
     {
         "class": "quick_panel_label",
-        "fg": <<color04a>>, // 04
-        "match_fg": <<color05a>>, // 05
-        "selected_fg": <<color05a>>, // 05
-        "selected_match_fg": <<color07a>> // 07
+        "fg": undefined, // 04
+        "match_fg": undefined, // 05
+        "selected_fg": undefined, // 05
+        "selected_match_fg": undefined // 07
     },
     {
         "class": "quick_panel_path_label",
-        "fg": <<color03a>>, // 03
-        "match_fg": <<color04a>>, // 04
-        "selected_fg": <<color03a>>, // 03
-        "selected_match_fg": <<color04a>> // 04
+        "fg": undefined, // 03
+        "match_fg": undefined, // 04
+        "selected_fg": undefined, // 03
+        "selected_match_fg": undefined // 04
     },
     {
         "class": "quick_panel_score_label",
-        "fg": <<color03a>>, // 03
-        "selected_fg": <<color03a>> // 03
+        "fg": undefined, // 03
+        "selected_fg": undefined // 03
     },
 
 //
@@ -731,14 +731,14 @@
     {
         "class": "mini_quick_panel_row",
         // "layer0.texture": "",
-        "layer0.tint": <<color01>>, // 01
+        "layer0.tint": undefined, // 01
         "layer0.opacity": 1
     },
     {
         "class": "mini_quick_panel_row",
         "attributes": ["selected"],
         // "layer0.texture": "",
-        "layer0.tint": <<color-01>> // -01
+        "layer0.tint": NaN // -01
     },
 
 //
@@ -748,7 +748,7 @@
     {
         "class": "popup_control",
         "content_margin": [0,0],
-        "layer0.tint": <<color01>>, // 01
+        "layer0.tint": undefined, // 01
         "layer0.opacity": 1
     },
     {
@@ -757,15 +757,15 @@
     },
     {
         "class": "auto_complete_label",
-        "fg": <<color03a>>, // 03
-        "match_fg": <<color05a>>, // 05
-        "selected_fg": <<color04a>>, // 04
-        "selected_match_fg": <<color05a>> // 05
+        "fg": undefined, // 03
+        "match_fg": undefined, // 05
+        "selected_fg": undefined, // 04
+        "selected_match_fg": undefined // 05
     },
     {
         "class": "table_row",
         // "layer0.texture": "",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 0,
         "layer0.inner_margin": [3,1]
     },
@@ -839,7 +839,7 @@
     {
         "class": "icon_regex",
         "layer0.texture": "Theme - Ink/assets/regex@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
 
@@ -847,33 +847,33 @@
     {
         "class": "icon_regex",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     },
     // Case sensitive search button
     {
         "class": "icon_case",
         "layer0.texture": "Theme - Ink/assets/casesens@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
     },
     {
         "class": "icon_case",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     },
     // Match whole word search button
     {
         "class": "icon_whole_word",
         "layer0.texture": "Theme - Ink/assets/wholeword@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
     },
     {
         "class": "icon_whole_word",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     },
 
 //
@@ -884,27 +884,27 @@
     {
         "class": "icon_context",
         "layer0.texture": "Theme - Ink/assets/context@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
     },
     {
         "class": "icon_context",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     },
     // Use search buffer
     {
         "class": "icon_use_buffer",
         "layer0.texture": "Theme - Ink/assets/buffer@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
     },
     {
         "class": "icon_use_buffer",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     },
 
 //
@@ -914,40 +914,40 @@
     {
         "class": "icon_reverse",
         "layer0.texture": "Theme - Ink/assets/reverse@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
     },
     {
         "class": "icon_reverse",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     },
     // Search wrap button
     {
         "class": "icon_wrap",
         "layer0.texture": "Theme - Ink/assets/wrap@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
     },
     {
         "class": "icon_wrap",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     },
     // Search in selection button
     {
         "class": "icon_in_selection",
         "layer0.texture": "Theme - Ink/assets/selection@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
     },
     {
         "class": "icon_in_selection",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     },
 
 //
@@ -958,14 +958,14 @@
     {
         "class": "icon_preserve_case",
         "layer0.texture": "Theme - Ink/assets/lock@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
     },
     {
         "class": "icon_preserve_case",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     },
 
 //
@@ -976,14 +976,14 @@
     {
         "class": "icon_highlight",
         "layer0.texture": "Theme - Ink/assets/highlight@2x.png",
-        "layer0.tint": <<color02>>, // 02
+        "layer0.tint": undefined, // 02
         "layer0.opacity": 1,
         "content_margin": 8
     },
     {
         "class": "icon_highlight",
         "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
-        "layer0.tint": <<color07>> // 07
+        "layer0.tint": undefined // 07
     }
 
 ]

@@ -1,12 +1,12 @@
 colors:
   C00: rgb(   0,    0,    0) #darken
   C01: rgb(  23,   23,   23) #dark
-  C02: rgb(  33,   33,   33) #
-  C03: rgb(  37,   37,   37)
-  C04: rgb(  52,   52,   52)
-  C05: rgb( 120,  120,  120)
-  C06: rgb( 222,  222,  222)
-  C07: rgb( 255,  255,  255)
+  C02: rgb(  33,   33,   33) #light
+  C03: rgb(  37,   37,   37) #lighter
+  C04: rgb(  52,   52,   52) #lighten
+  C05: rgb( 120,  120,  120) #texten
+  C06: rgb( 222,  222,  222) #texter
+  C07: rgb( 255,  255,  255) #text
   C08: rgb( 251,    0,   86) #red
   C09: rgb( 255,   59,   66) #orange
   C10: rgb( 228,  255,    0) #yellow
@@ -15,29 +15,14 @@ colors:
   C13: rgb(   0,  213,  233) #blue
   C14: rgb( 181,  178,  255) #purple
   C15: rgb( 254,  194,  194) #brown
+  C16: rgb( 254,  194,  194) #brown
 
 themes:
   - colors
-  # - gnome-shell
+  - gnome-shell
+  - sublime-text
   # - metacity
-  # - sublime-text
   # - firefox
   # - sh
   # - gtk
   # - markdown
-
-# // @dark: rgb(23, 23, 23);
-# // @darken: rgb(0, 0, 0);
-
-# // @light: rgb(33, 33, 33);
-# // @lighten: 59, 59, 59;
-
-# // @high: rgb(2, 196, 251);
-
-# // @warn: rgb(251, 2, 96);
-
-
-
-# // @text: rgb(255, 255, 255);
-# // @texten: rgb(120, 120, 120);
-# // @texter: rgb(50, 50, 50);
