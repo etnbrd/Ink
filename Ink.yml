@@ -18,9 +18,9 @@ colors:
   C16: rgb( 254,  194,  194) #brown
 
 themes:
-  - colors
+  # - colors
   - gnome-shell
-  - sublime-text
+  # - sublime-text
   # - metacity
   # - firefox
   # - sh

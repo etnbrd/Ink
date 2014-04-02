@@ -20,6 +20,11 @@ Include :
 ![Screenshot calendar](https://raw.github.com/etnbrd/Ink/master/screens/screen-calendar.png)
 ![Screenshot system menu](https://raw.github.com/etnbrd/Ink/master/screens/screen-sys.png)
 
+## Dependencies
+
++ node
++ imagemagick
+
 ## 1. Modify
 
 The colors and the themes to build are in the file `Ink.yml`

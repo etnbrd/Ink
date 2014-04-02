@@ -3,7 +3,8 @@
   "description": "A theme builder for ultra rapid modification in color scheme for multiple app skins at once",
   "author": "Etienne Brodu <etn@etnbrd.com>",
   "dependencies": {
-    "onecolor": "*"
+    "onecolor": "*",
+    "async": "*"
   },
   "optionalDependencies": {
   	"less": "*"

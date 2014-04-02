@@ -1,39 +1,42 @@
 var fs = require('fs');
 var yaml = require('js-yaml');
 var color = require('onecolor');
+var async = require('async');
 
-var templateEngine = function(tpl, data) {
-    var re = /<<([^>]+)?>>/g;
+const __src = 'src/';
 
-    while(match = re.exec(tpl)) {
-    	// TODO change eval for a vm
-   		tpl = tpl.replace(match[0], eval("data." + match[1]))
-    }
-    return tpl;
-}
 
-function write(path, src, name) {
+function _template(path, name, cb) {
 
+	function templateEngine(tpl, data) {
+	    var re = /<<([^>]+)?>>/g;
+
+	    while(match = re.exec(tpl)) {
+	    	// TODO change eval for a vm
+	   		tpl = tpl.replace(match[0], eval("data." + match[1]))
+	    }
+	    return tpl;
+	}
 
 	var file = fs.readFileSync(path + '/' + name);
 	var content = templateEngine('' + file, context);
-	src = src || '';
 
-	fs.writeFileSync(path + '/' + src + '/' + name, content);
+	fs.writeFile(path + '/' + __src + name, content, function() {
+		cb(null, "template done");
+	});
 }
 
-function less(path, name, dest) {
+function _less(path, name, dest, cb) {
 
-
-	var less = require('less');
 	var file = '' + fs.readFileSync(path + '/' + name);
 
-	if (!dest) {
+	if (!cb) {
+		cb = dest;
 		var re = /.less$/;
 		dest = name.replace(re.exec(name), ".css");
 	}
 
-	var parser = new(less.Parser)({
+	var parser = new(require('less').Parser)({
 	  paths: [path + '/'], // Specify search paths for @import directives
 	  filename: name // Specify a filename, for better error messages
 	});
@@ -51,7 +54,10 @@ function less(path, name, dest) {
 		    compress: true
 		  });
 
+		  console.log("writing less file");
+
 		  fs.writeFileSync(path + '/' + dest, css);
+		  cb(null, "less done"); // TODO unsync the writeFile.
 		}
 	});
 }
@@ -69,7 +75,7 @@ function run_cmd(cmd, args, cb, end) {
 	child.stderr.on('data', function(buffer) {console.error('' + buffer)});
 }
 
-function install(src, dest, load) {
+function _install(src, dest, cb) {
 
 	src.unshift('-avzh');
 	src.unshift('rsync');
@@ -81,75 +87,96 @@ function install(src, dest, load) {
 		function(buf){
 			buffer += '  ' + buf;
 		},
-		function() {
-			console.log('' + buffer);
+		function() {cb(null, "install done")})
+}
 
-			console.log("install done");
-
-			var sep = load.indexOf(" ");
-			var cmd = load.substring(0, sep);
-			var args = load.substring(sep + 1).split(" ");
-			new run_cmd(cmd, args, undefined, function() {
-				console.log("load done");
-			});
-		})
+function sh(src) {
+	new run_cmd(src)
 }
 
 
 
 function build(theme) {
+
+	this.template = function(src, cb) {
+		if (src instanceof Array) {
+			for (var i = src.length - 1; i >= 0; i--) { // TODO multiple template, so the callback for async is called multiple times, should have an async.parallel here, or what ...
+				_template(theme, src[i], cb);
+			};
+		} else {
+			_template(theme, src, cb);
+		}
+	}
+
+
+	this.less = function(src, cb) {
+		if (src) {
+			if (src instanceof Array) {
+				for (var i = src.length - 1; i >= 0; i--) { // TODO same as template
+					_less(theme + '/' + __src, src[i], cb);
+				};
+			} else {
+				_less(theme + '/' + __src, src, cb);
+			}
+		}
+	}
+
+
+	this.install = function(files, cb) {
+		if (files) {
+			if (files.src && files.dest) {
+
+				var _files = [];
+
+				if(files.src instanceof Array)
+					for (var i = files.src.length - 1; i >= 0; i--) {
+						_files.push(theme + '/' + __src + files.src[i]);
+					}
+				else
+					_files.push(theme + '/' + __src + files.src);
+
+
+				_install(_files, files.dest, cb);
+
+			} else {
+				console.error("Install error : src or dest not defined", files.src, files.dest);
+			}
+		}
+	}
+
+	this.load = function(load, cb) {
+		var sep = load.indexOf(" ");
+		var cmd = load.substring(0, sep);
+		var args = load.substring(sep + 1).split(" ");
+		new run_cmd(cmd, args, undefined, function() {
+			cb(null, "load done");
+		});
+	}
+
+
 	return function _build(err, file) {
 
 		console.log('\x1B[1m\x1B[36m>\x1B[35m>\x1B[39m\x1B[22m ' + theme)
 
-		var build = yaml.safeLoad(fs.readFileSync(theme + '/build.yml', 'utf8'));
 
-		build.src = build.src || 'src/';
+		var buildCtx = yaml.safeLoad(fs.readFileSync(theme + '/build.yml', 'utf8'));
 
-		// TEMPLATE
-		if (build.template instanceof Array) {
-			for (var i = build.template.length - 1; i >= 0; i--) {
-				write(theme,build.src, build.template[i]);
-			};
-		} else {
-			write(theme,build.src, build.template);
-		}
+		var tasks = [];
 
-		console.log("template done");
-
-		// LESS
-		if (build.less) {
-			if (build.less instanceof Array) {
-				for (var i = build.less.length - 1; i >= 0; i--) {
-					less(theme + '/' + build.src, build.less[i]);
-				};
-			} else {
-				less(theme + '/' + build.src, build.less);
+		function tasksFactory(fn, argument) {
+			return function(cb) {
+				return fn(argument, cb);
 			}
 		}
 
-		console.log("less done");
-
-		// INSTALL
-		if (build.install) {
-			if (build.install.src && build.install.dest) {
-
-				var src = [];
-
-				if(build.install.src instanceof Array)
-					for (var i = build.install.src.length - 1; i >= 0; i--) {
-						src.push(theme + '/' + build.src + '/' + build.install.src[i]);
-					}
-				else
-					src.push(theme + '/' + build.src + '/' + build.install.src);
-
-
-				install(src, build.install.dest, build.load);
-
-			} else {
-				console.error("Install error : src or dest not defined", build.install.src, build.install.dest);
-			}
+		for(var b in buildCtx) {
+			console.log(b, ' : ', buildCtx[b]);
+			tasks.push(tasksFactory(this[b], buildCtx[b]));
 		}
+
+		async.series(tasks, function() {
+			console.log(arguments);
+		});
 	}
 }
 
