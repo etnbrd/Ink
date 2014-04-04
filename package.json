@@ -4,6 +4,7 @@
   "author": "Etienne Brodu <etn@etnbrd.com>",
   "dependencies": {
     "onecolor": "*",
+    "js-yaml": "*",
     "async": "*"
   },
   "optionalDependencies": {
