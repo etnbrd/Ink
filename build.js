@@ -21,9 +21,8 @@ function _template(path, name, cb) {
 	var file = fs.readFileSync(path + '/' + name);
 	var content = templateEngine('' + file, context);
 
-	fs.writeFile(path + '/' + __src + name, content, function() {
-		cb(null, "template done");
-	});
+	fs.writeFileSync(path + '/' + __src + name, content);
+	cb(null);
 }
 
 function _less(path, name, dest, cb) {
@@ -64,7 +63,7 @@ function _less(path, name, dest, cb) {
 function run_cmd(cmd, args, cb, end) {
 
 	args = args || [];
-	console.log("  > ", cmd, args.join(' '));
+	// console.log("  > ", cmd, args.join(' '));
 
   var child = require('child_process').spawn(cmd, args);
 
@@ -102,9 +101,13 @@ function build(theme) {
 		if (src instanceof Array) {
 			async.every(src, function(src, cb) {
 				_template(theme, src, cb);
-			}, cb)
+			}, function() {
+				cb(null, "template done");
+			})
 		} else {
-			_template(theme, src, cb);
+			_template(theme, src, function() {
+				cb(null, "template done");
+			});
 		}
 	}
 
@@ -125,7 +128,7 @@ function build(theme) {
 	this.run = function(src, cb) {
 		new run_cmd('./' + theme + '/' + __src + src, [],
 			function(buf) {
-				console.log('' + buf);
+				// console.log('' + buf);
 			},
 			function() {
 				cb(null, "run done");
@@ -147,7 +150,7 @@ function build(theme) {
 
 				new run_cmd("sync", [],
 					function(buf) {
-						console.log('' + buf)
+						// console.log('' + buf)
 					},
 					function() {
 						_install(_files, files.dest, cb);
@@ -163,16 +166,16 @@ function build(theme) {
 		var sep = load.indexOf(" ");
 		var cmd = load.substring(0, sep);
 		var args = load.substring(sep + 1).split(" ");
-		new run_cmd(cmd, args, undefined, function() {
+		new run_cmd(cmd, args, function(buf) {
+			// console.log('' + buf);
+		},
+		function() {
 			cb(null, "load done");
 		});
 	}
 
 
 	return function _build(err, file) {
-
-		console.log('\x1B[1m\x1B[36m>\x1B[35m>\x1B[39m\x1B[22m ' + theme)
-
 
 		var buildCtx = yaml.safeLoad(fs.readFileSync(theme + '/build.yml', 'utf8'));
 
@@ -189,8 +192,14 @@ function build(theme) {
 			tasks.push(tasksFactory(this[b], buildCtx[b]));
 		}
 
-		async.series(tasks, function() {
-			console.log(arguments);
+		async.series(tasks, function(errors, results) {
+
+
+			console.log('\x1B[1m\x1B[36m>\x1B[35m>\x1B[39m\x1B[22m ' + theme);
+
+			for( var i in results) { var res = results[i]
+				console.log('  \x1B[1m\x1B[32m✓\x1B[39m\x1B[22m ' + res);
+			}
 		});
 	}
 }
