@@ -15,7 +15,6 @@ colors:
   C13: rgb(   0,  213,  233) #blue
   C14: rgb( 181,  178,  255) #purple
   C15: rgb( 254,  194,  194) #brown
-  C16: rgb( 254,  194,  194) #brown
 
 themes:
   # - colors

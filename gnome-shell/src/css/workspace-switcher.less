@@ -4,10 +4,10 @@
 }
 
 .workspace-switcher-container {
-    background: rgba(0,0,0,0.8);
-    border: 1px solid rgba(128,128,128,0.40);
+    background: fade(@dark, 90%);
+    border: 1px solid fade(@darken, 90%);
     border-radius: 2px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .workspace-switcher {
@@ -18,25 +18,23 @@
     spacing: 8px;
 }
 
+.ws-switcher-active-up,
+.ws-switcher-active-down {
+    height: 90px;
+    border: 0.5px solid @text;
+    border-radius: 1px;
+}
+
 .ws-switcher-active-up {
-    height: 100px;
-    border: 0px;
-    background: rgba(255,255,255,0.5);
-    background-image: url("assets/ws-switch-arrow-up.png");
-    border-radius: 2px;
+    background-image: url("assets/ws-switch-up.png");
 }
 
 .ws-switcher-active-down {
-    height: 100px;
-    border: 0px;
-    background: rgba(255,255,255,0.5);
-    background-image: url("assets/ws-switch-arrow-down.png");
-    border-radius: 2px;
+    background-image: url("assets/ws-switch-down.png");
 }
 
 .ws-switcher-box {
-    height: 96px;
-    border: 2px solid rgba(85,85,85,0.5);
-    background: transparent;
-    border-radius: 2px;
+    height: 40px;
+    border: 0.5px solid fade(@texten, 90%);
+    border-radius: 1px;
 }
