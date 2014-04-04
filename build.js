@@ -64,11 +64,11 @@ function _less(path, name, dest, cb) {
 function run_cmd(cmd, args, cb, end) {
 
 	args = args || [];
-	// console.log("  > ", cmd, args.join(' '));
+	console.log("  > ", cmd, args.join(' '));
 
   var child = require('child_process').spawn(cmd, args);
 
-  child.stdout.on('data', function(buffer) {console.log('' + buffer)});
+  child.stdout.on('data', cb || function(buffer) {console.log('' + buffer)});
 	child.stdout.on('end', end || function() {console.log('done')});
 	child.stderr.on('data', function(buffer) {console.error('' + buffer)});
 }
@@ -121,6 +121,16 @@ function build(theme) {
 		}
 	}
 
+
+	this.run = function(src, cb) {
+		new run_cmd('./' + theme + '/' + __src + src, [],
+			function(buf) {
+				console.log('' + buf);
+			},
+			function() {
+				cb(null, "run done");
+			})
+	}
 
 	this.install = function(files, cb) {
 		if (files) {

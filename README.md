@@ -41,4 +41,4 @@ See build.js:80
 ## TODOS
 
 + Fix the sudo shit (build.js:80)
-+ Why two build phase are needed to apply gnome-shell theme ?
++ To reload images in gnome-shell, need to do a Alt+F2 > rt

@@ -5,6 +5,9 @@ template:
 less:
   'gnome-shell.less'
 
+run:
+  'images.sh'
+
 install:
   src: 
     - 'gnome-shell.css'
