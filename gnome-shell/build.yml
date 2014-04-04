@@ -1,6 +1,6 @@
 template:
   - 'gnome-shell.less'
-  # - 'images.sh'
+  - 'images.sh'
 
 less:
   'gnome-shell.less'

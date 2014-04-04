@@ -54,8 +54,6 @@ function _less(path, name, dest, cb) {
 		    compress: true
 		  });
 
-		  console.log("writing less file");
-
 		  fs.writeFileSync(path + '/' + dest, css);
 		  cb(null, "less done"); // TODO unsync the writeFile.
 		}
@@ -66,7 +64,7 @@ function _less(path, name, dest, cb) {
 function run_cmd(cmd, args, cb, end) {
 
 	args = args || [];
-	console.log("  > ", cmd, args.join(' '));
+	// console.log("  > ", cmd, args.join(' '));
 
   var child = require('child_process').spawn(cmd, args);
 
@@ -87,7 +85,9 @@ function _install(src, dest, cb) {
 		function(buf){
 			buffer += '  ' + buf;
 		},
-		function() {cb(null, "install done")})
+		function() {
+			cb(null, "install done")
+		})
 }
 
 function sh(src) {
@@ -100,9 +100,9 @@ function build(theme) {
 
 	this.template = function(src, cb) {
 		if (src instanceof Array) {
-			for (var i = src.length - 1; i >= 0; i--) { // TODO multiple template, so the callback for async is called multiple times, should have an async.parallel here, or what ...
-				_template(theme, src[i], cb);
-			};
+			async.every(src, function(src, cb) {
+				_template(theme, src, cb);
+			}, cb)
 		} else {
 			_template(theme, src, cb);
 		}
@@ -112,9 +112,9 @@ function build(theme) {
 	this.less = function(src, cb) {
 		if (src) {
 			if (src instanceof Array) {
-				for (var i = src.length - 1; i >= 0; i--) { // TODO same as template
-					_less(theme + '/' + __src, src[i], cb);
-				};
+				async.every(src, function(src, cb) {
+					_less(theme + '/' + __src, src, cb);
+				}, cb)
 			} else {
 				_less(theme + '/' + __src, src, cb);
 			}
@@ -135,8 +135,13 @@ function build(theme) {
 				else
 					_files.push(theme + '/' + __src + files.src);
 
-
-				_install(_files, files.dest, cb);
+				new run_cmd("sync", [],
+					function(buf) {
+						console.log('' + buf)
+					},
+					function() {
+						_install(_files, files.dest, cb);
+					})
 
 			} else {
 				console.error("Install error : src or dest not defined", files.src, files.dest);
@@ -170,7 +175,7 @@ function build(theme) {
 		}
 
 		for(var b in buildCtx) {
-			console.log(b, ' : ', buildCtx[b]);
+			// console.log(b);
 			tasks.push(tasksFactory(this[b], buildCtx[b]));
 		}
 
