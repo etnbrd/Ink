@@ -22,6 +22,7 @@ Include :
 
 ## Dependencies
 
++ npm
 + node
 + imagemagick
 
@@ -34,6 +35,7 @@ The template files might contain some refrence to the colors in Ink.yml, like th
 
 ## 2. Build & Install
 
+`npm install`
 `sudo id && node build.js`
 For the moment, we need sudo privileges without entering the password.
 See build.js:80
