@@ -28,12 +28,19 @@ Include :
 
 ## 1. Modify
 
-The colors and the themes to build are in the file `Ink.yml`
-Each teheme is a directory containing a `build.yml` file, one or more template files and a `src` directory.
-This `src` directory should contain the final theme to be installed.
+The colors and the themes to build are in the file `Ink.yml`  
+Each theme is a directory containing a `build.yml` file, one or more template files and a `src` directory.  
+This `src` directory should contain the final theme to be installed.  
 The template files might contain some refrence to the colors in Ink.yml, like this : `<<colors.C00.css()>>`.
 
 ## 2. Build & Install
+
+!! Before installing, I strongly recommand you to backup your previous gnome-shell theme :
+```
+cd /usr/share/gnome-shell/theme
+cp -r theme theme.bkp
+```
+
 
 `npm install`
 `sudo id && node build.js`
