@@ -79,23 +79,17 @@ StScrollBar {
 
 .toggle-switch {
     width: 65px;
-    height: 22px;
+    height: 1em;
 }
 
-.toggle-switch-us {
-    /*background-image: url("assets/toggle-off-us.svg");*/
-    background-size: contain;
-}
-.toggle-switch-us:checked {
-    /*background-image: url("assets/toggle-on-us.svg");*/
-    background-size: contain;
-}
-
+.toggle-switch-us,
 .toggle-switch-intl {
-    /*background-image: url("assets/toggle-off-intl.svg");*/
+    background-image: url("assets/toggle-off-intl.svg"); // TODO
     background-size: contain;
 }
+
+.toggle-switch-us:checked,
 .toggle-switch-intl:checked {
-    /*background-image: url("assets/toggle-on-intl.svg");*/
+    background-image: url("assets/toggle-on-intl.svg"); // TODO
     background-size: contain;
 }
