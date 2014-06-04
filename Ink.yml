@@ -18,7 +18,8 @@ colors:
 
 themes:
   # - colors
-  - gnome-shell
+  # - gnome-shell
+  - shell
   # - sublime-text
   # - metacity
   # - firefox

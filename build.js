@@ -5,15 +5,19 @@ var async = require('async');
 
 const __src = 'src/';
 
-
 function _template(path, name, cb) {
 
 	function templateEngine(tpl, data) {
-	    var re = /<<([^>]+)?>>/g;
+	    var re = /<<([^>]+)>>/g;
+
+	    var hex = /#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})/g;
+	    var ansi = '$1/$2/$3';
 
 	    while(match = re.exec(tpl)) {
 	    	// TODO change eval for a vm
-	   		tpl = tpl.replace(match[0], eval("data." + match[1]))
+	    	var repl = eval("data." + match[1]);
+	    	console.log(match[0], " => ", repl);
+	   		tpl = tpl.replace(match[0], repl)
 	    }
 	    return tpl;
 	}
@@ -63,7 +67,7 @@ function _less(path, name, dest, cb) {
 function run_cmd(cmd, args, cb, end) {
 
 	args = args || [];
-	// console.log("  > ", cmd, args.join(' '));
+	console.log("  > ", cmd, args.join(' '));
 
   var child = require('child_process').spawn(cmd, args);
 
@@ -79,6 +83,8 @@ function _install(src, dest, cb) {
 	src.push(dest);
 
 	var buffer = '';
+
+	// console.log(src.join(' '));
 
 	new run_cmd('sudo', src, // TODO the sudo shit, run sudo rsync, instead of rsync because of privileges in the destination folder : /usr/share ...
 		function(buf){
@@ -188,7 +194,7 @@ function build(theme) {
 		}
 
 		for(var b in buildCtx) {
-			// console.log(b);
+			// console.log(b, this[b]);
 			tasks.push(tasksFactory(this[b], buildCtx[b]));
 		}
 
@@ -212,6 +218,9 @@ var context = yaml.safeLoad(fs.readFileSync('Ink.yml', 'utf8'));
 
 for (var c in context.colors) {
 	context.colors[c] = color(context.colors[c]);
+	context.colors[c].ansi = function() { // TODO put this in the prototype of onecolor
+		return this.hex().replace(/#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})/g, '$1/$2/$3');
+	}
 };
 
 if (context.themes) for (var i = context.themes.length - 1; i >= 0; i--) {
