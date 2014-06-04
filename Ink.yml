@@ -19,7 +19,7 @@ colors:
 themes:
   # - colors
   # - gnome-shell
-  - shell
+  - sh
   # - sublime-text
   # - metacity
   # - firefox
