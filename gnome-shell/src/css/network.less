@@ -32,10 +32,13 @@
     font-weight: 100;
     border-bottom: 0.5px solid red;
     padding: 5px;
-}
 
-.nm-dialog-item:checked {
-    background-color: @light;
+    &:hover,
+    &:focus,
+    &:active,
+    &:checked {
+        background-color: @light;
+    }
 }
 
 .nm-dialog-item-box {
