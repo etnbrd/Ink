@@ -16,7 +16,7 @@ function _template(path, name, cb) {
 	    while(match = re.exec(tpl)) {
 	    	// TODO change eval for a vm
 	    	var repl = eval("data." + match[1]);
-	    	console.log(match[0], " => ", repl);
+	    	// console.log(match[0], " => ", repl);
 	   		tpl = tpl.replace(match[0], repl)
 	    }
 	    return tpl;
@@ -67,7 +67,7 @@ function _less(path, name, dest, cb) {
 function run_cmd(cmd, args, cb, end) {
 
 	args = args || [];
-	console.log("  > ", cmd, args.join(' '));
+	// console.log("  > ", cmd, args.join(' '));
 
   var child = require('child_process').spawn(cmd, args);
 
@@ -103,10 +103,12 @@ function sh(src) {
 
 function build(theme) {
 
-	this.template = function(src, cb) {
+	var _tasks = {};
+
+	_tasks.template = function(src, cb) {
 		if (src instanceof Array) {
-			async.every(src, function(src, cb) {
-				_template(theme, src, cb);
+			async.every(src, function(_src, cb) {
+				_template(theme, _src, cb);
 			}, function() {
 				cb(null, "template done");
 			})
@@ -118,7 +120,7 @@ function build(theme) {
 	}
 
 
-	this.less = function(src, cb) {
+	_tasks.less = function(src, cb) {
 		if (src) {
 			if (src instanceof Array) {
 				async.every(src, function(src, cb) {
@@ -131,7 +133,7 @@ function build(theme) {
 	}
 
 
-	this.run = function(src, cb) {
+	_tasks.run = function(src, cb) {
 		new run_cmd('./' + theme + '/' + __src + src, [],
 			function(buf) {
 				// console.log('' + buf);
@@ -141,7 +143,7 @@ function build(theme) {
 			})
 	}
 
-	this.install = function(files, cb) {
+	_tasks.install = function(files, cb) {
 		if (files) {
 			if (files.src && files.dest) {
 
@@ -168,7 +170,7 @@ function build(theme) {
 		}
 	}
 
-	this.load = function(load, cb) {
+	_tasks.load = function(load, cb) {
 		var sep = load.indexOf(" ");
 		var cmd = load.substring(0, sep);
 		var args = load.substring(sep + 1).split(" ");
@@ -179,7 +181,6 @@ function build(theme) {
 			cb(null, "load done");
 		});
 	}
-
 
 	return function _build(err, file) {
 
@@ -194,8 +195,7 @@ function build(theme) {
 		}
 
 		for(var b in buildCtx) {
-			// console.log(b, this[b]);
-			tasks.push(tasksFactory(this[b], buildCtx[b]));
+			tasks.push(tasksFactory(_tasks[b], buildCtx[b]));
 		}
 
 		async.series(tasks, function(errors, results) {
@@ -223,6 +223,11 @@ for (var c in context.colors) {
 	}
 };
 
-if (context.themes) for (var i = context.themes.length - 1; i >= 0; i--) {
-	fs.readFile(context.themes[i] + '/build.yml', build(context.themes[i]));
-};
+// if (context.themes) for (var i = context.themes.length - 1; i >= 0; i--) {
+// 	fs.readFile(context.themes[i] + '/build.yml', build(context.themes[i]));
+// };
+
+context.themes.forEach(function(theme) {
+	var file = fs.readFile(theme + '/build.yml', new build(theme));
+	// build(theme)(undefined, file);
+})
