@@ -169,11 +169,12 @@ stage {
 }
 
 .search-section-separator {
-    -gradient-height: 1px;
-    -gradient-start: rgba(255,255,255,0);
-    -gradient-end: rgba(255,255,255,0.5);
+    // -gradient-height: 1px;
+    // -gradient-start: rgba(255,255,255,0);
+    // -gradient-end: rgba(255,255,255,0.5);
     -margin-horizontal: 1.5em;
-    height: 1px;
+    height: 0.5px;
+    background: fadeout(@text, 80%);
 }
 
 .search-section-content {
@@ -302,6 +303,7 @@ stage {
     // border: 1px rgba(0,0,0,0);
     transition-duration: 100ms;
     text-align: center;
+    font-weight: 100;
 }
 
 .search-provider-icon {
@@ -320,8 +322,7 @@ stage {
 }
 
 .app-well-app.running > .overview-icon {
-    text-shadow: black 0px 2px 2px;
-    background: @light;
+    background: fadeout(@text, 80%);
     // border: 0.5px solid @high;
     // background-image: url("assets/running-indicator.svg");
     // background-size: contain;
@@ -336,8 +337,7 @@ stage {
 .search-provider-icon:hover,
 .list-search-result:hover,
 .grid-search-result:hover .overview-icon {
-    background-color: @lighter;
-    text-shadow: black 0px 2px 2px;
+    background-color: fadeout(@text, 70%);
     transition-duration: 100ms;
     color:white;
 }
@@ -368,12 +368,13 @@ stage {
 .show-apps:active > .overview-icon,
 .search-provider-icon:active,
 .list-search-result:active {
-    background-gradient-start: rgba(255, 255, 255, .05);
-    background-gradient-end: rgba(255, 255, 255, .15);
-    background-gradient-direction: vertical;
+    // background-gradient-start: rgba(255, 255, 255, .05);
+    // background-gradient-end: rgba(255, 255, 255, .15);
+    // background-gradient-direction: vertical;
     border-radius: 1px;
-    box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.7);
+    // box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.7);
     transition-duration: 100ms;
+    background: fadeout(@text, 70%);
 }
 
 .show-apps:checked .show-apps-icon,
@@ -391,7 +392,7 @@ stage {
 .grid-search-result:selected .overview-icon,
 .search-provider-icon:selected,
 .list-search-result:selected {
-    background-color: rgba(255,255,255,0.33);
+    background-color: fadeout(@text, 70%);
 }
 
 
@@ -427,12 +428,15 @@ stage {
 .ripple-box {
     width: 25px;
     height: 25px;
-    background-image: url("assets/corner-ripple-ltr.png");
-    background-size: contain;
-}
+    background: @high;
 
-.ripple-box:rtl {
-    background-image: url("assets/corner-ripple-rtl.png");
+    &:ltr {
+        border-radius: 0 0 25px 0;
+    }
+
+    &:rtl {
+        border-radius: 0 0 0 25px;
+    }
 }
 
 .switcher-arrow {
