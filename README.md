@@ -1,18 +1,8 @@
 <!-- ![Ink](logo.png) -->
 
 <div id="container">
-    <img src="logo.png" alt="Ink"/>
+    <img src="logo.png" alt="Ink" style="margin: auto"/>
 </div>
-
-#container {
-    height:100px;
-    line-height:100px;
-}
-
-#container img {
-    vertical-align:middle;
-    max-height:100%;
-}
 
 A dark, flat, minimalist theme for great tools.
 And customizable to suit your needs.
