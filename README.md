@@ -1,4 +1,18 @@
-![Ink](logo.png)
+<!-- ![Ink](logo.png) -->
+
+<div id="container">
+    <img src="logo.png" alt="Ink"/>
+</div>
+
+#container {
+    height:100px;
+    line-height:100px;
+}
+
+#container img {
+    vertical-align:middle;
+    max-height:100%;
+}
 
 A dark, flat, minimalist theme for great tools.
 And customizable to suit your needs.
@@ -8,11 +22,14 @@ This is a work in progress, but you can already use it, and issue bug reports.
 Include :
 
 + gnome-shell 3.10.4
++ shell
+
+later :
+
++ sublime-text 3
 + mutter (metacity 1 & 2)
 + gtk 3
-+ sublime-text 3
 + firefox
-+ shell
 + markdown
 
 ## Screens
