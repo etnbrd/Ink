@@ -7,6 +7,9 @@ install:
   dest:
     '/home/etn/.config' # TODO bug when I set ~ instead of the absolute path
 
+# TODO you need to add this line to your .zshrc / .bashrc :
+# source $HOME/.config/colors.sh
+
 # load:
-  # './colortest'
   # 'source /home/etn/.zshrc'
+  # './colortest'

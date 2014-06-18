@@ -19,7 +19,7 @@ colors:
 themes:
   - colors
   - gnome-shell
-  - sh
+  - oh-my-zsh
 
 # TODOS
   # - sublime-text
