@@ -1,6 +1,3 @@
-src:
-  'src'
-
 template:
   'colors.less'
 
