@@ -1,0 +1,12 @@
+template:
+  'colors.sh'
+
+install:
+  src: 
+    'colors.sh'
+  dest:
+    '/home/etn/.config' # TODO bug when I set ~ instead of the absolute path
+
+# load:
+  # './colortest'
+  # 'source /home/etn/.zshrc'
