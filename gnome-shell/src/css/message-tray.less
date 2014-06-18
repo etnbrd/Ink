@@ -12,9 +12,13 @@
 }
 
 .message-tray-menu-button {
+
+  // background: white;
+
   StIcon {
     padding: 0 20px;
-    color: @text;
+    color: @text; // TODO seems not a complete opacity
+    // color: red;
     icon-size: 14px;
   }
 
@@ -71,7 +75,7 @@
   -arrow-base: 20px;
   -arrow-rise: 10px;
   -arrow-border-color: @darken;
-  -arrow-border-width: 1px;
+  -arrow-border-width: 0.5px;
   -boxpointer-gap: 10px;
   color: @text;
 
@@ -254,41 +258,56 @@
 }
 
 .summary-source-button {
-  padding: 6px 3px 6px 3px;
+
+  height: 40px;
+  width: 29px;
+
+  padding: 6px 2px;
+
+  // padding: 6px 3px 6px 3px;
+  // margin: 5px;
+
+  &:last-child:ltr {
+    padding-right: 6px;
+  }
+  
+  &:last-child:rtl {
+    padding-left: 6px;
+  }
+
+  &:hover .summary-source {
+    background-color: @high;
+  }
+
+  &:focus .summary-source,
+  &:selected .summary-source {
+    background-color: @high;
+  }
+
+  & StIcon {
+    width: 20px;
+    padding: 0px 23px 0px 0px;
+  }
 }
 
-.summary-source-button:last-child:ltr {
-  padding-right: 6px;
-}
 
-.summary-source-button:last-child:rtl {
-  padding-left: 6px;
-}
-
-.summary-source-button:hover .summary-source {
-  background-color: rgba(255,255,255,0.1);
-}
-
-.summary-source-button:focus .summary-source,
-.summary-source-button:selected .summary-source {
-  background-color: rgba(255,255,255,0.33);
-}
 
 .summary-source {
   border-radius: 1px;
-  padding: 0 6px 0 6px;
+  padding: 2px;
   transition-duration: 100ms;
 }
 
 // TODO
 .summary-source-counter {
   // background-image: url("assets/summary-counter.svg");
-  background: red;
-  background-size: 2.4em;
+  background: @warn;
+  border-radius: 1em;
+  // background-size: 2.4em;
   font-size: 10pt;
-  font-weight: bold;
-  height: 2.4em;
-  width: 2.4em;
-  -shell-counter-overlap-x: 13px;
-  -shell-counter-overlap-y: 13px;
+  // font-weight: bold;
+  height: 1.3em;
+  width: 1.3em;
+  -shell-counter-overlap-x: -18px;
+  -shell-counter-overlap-y: .45em;
 }

@@ -1,7 +1,7 @@
 <!-- ![Ink](logo.png) -->
 
-<div id="container">
-    <img src="logo.png" alt="Ink" style="margin: auto"/>
+<div id="container" style="text-align: center">
+    <img src="logo.png" alt="Ink"/>
 </div>
 
 A dark, flat, minimalist theme for great tools.
