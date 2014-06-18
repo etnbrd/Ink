@@ -368,12 +368,13 @@ stage {
 .show-apps:active > .overview-icon,
 .search-provider-icon:active,
 .list-search-result:active {
-    background-gradient-start: rgba(255, 255, 255, .05);
-    background-gradient-end: rgba(255, 255, 255, .15);
-    background-gradient-direction: vertical;
+    // background-gradient-start: rgba(255, 255, 255, .05);
+    // background-gradient-end: rgba(255, 255, 255, .15);
+    // background-gradient-direction: vertical;
     border-radius: 1px;
     box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.7);
     transition-duration: 100ms;
+    background: @light;
 }
 
 .show-apps:checked .show-apps-icon,
@@ -427,12 +428,15 @@ stage {
 .ripple-box {
     width: 25px;
     height: 25px;
-    background-image: url("assets/corner-ripple-ltr.png");
-    background-size: contain;
-}
+    background: @high;
 
-.ripple-box:rtl {
-    background-image: url("assets/corner-ripple-rtl.png");
+    &:ltr {
+        border-radius: 0 0 25px 0;
+    }
+
+    &:rtl {
+        border-radius: 0 0 0 25px;
+    }
 }
 
 .switcher-arrow {
