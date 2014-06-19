@@ -1,0 +1,29 @@
+template:
+  - 'gtkrc'
+
+install:
+  src: 
+    - 'Arrows'
+    - 'Buttons'
+    - 'Check-Radio'
+    - 'Combo'
+    - 'Frame-Gap'
+    - 'gtkrc'
+    - 'Handles'
+    - 'Lines'
+    - 'ListHeaders'
+    - 'Menu-Menubar'
+    - 'Others'
+    - 'Panel'
+    - 'ProgressBar'
+    - 'Scrollbars'
+    - 'Shadows'
+    - 'Spin'
+    - 'styles'
+    - 'Tabs'
+    - 'Toolbar'
+  dest:
+    '/usr/share/themes/Ink/gtk-2.0'
+
+# load:
+#   TODO

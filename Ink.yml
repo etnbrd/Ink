@@ -17,13 +17,14 @@ colors:
   C15: rgb( 254,  194,  194) #brown
 
 themes:
-  - colors
+  # - colors
   - gnome-shell
   - oh-my-zsh
+  - metacity
+  - gtk-2
+  - gtk-3
 
 # TODOS
   # - sublime-text
-  # - metacity
   # - firefox
-  # - gtk
   # - markdown

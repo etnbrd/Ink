@@ -1,0 +1,18 @@
+template:
+  - 'settings.ini'
+
+install:
+  src: 
+    - 'apps'
+    - 'assets'
+    - 'widgets'
+    - 'gtk-widgets-assets-dark.css'
+    - 'gtk-widgets-assets.css'
+    - 'gtk-widgets.css'
+    - 'gtk.css'
+    - 'settings.ini'
+  dest:
+    '/usr/share/themes/Ink/gtk-3.0'
+
+# load:
+#   TODO

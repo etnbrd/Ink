@@ -1,0 +1,10 @@
+template:
+  - 'metacity-theme-3.xml'
+  - 'assets/circle.svg'
+
+install:
+  src:
+    - 'metacity-theme-3.xml'
+    - 'assets'
+  dest:
+    - '/usr/share/themes/Ink/metacity-1/'

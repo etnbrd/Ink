@@ -2,27 +2,27 @@
 /* Login Dialog */
 
 .framed-user-icon {
-    border: 2px solid #8b8b8b;
-    border-radius: 2px;
+    border: 0.5px solid @text;
+    border-radius: 200px;
     background-size: contain;
 }
 
 .framed-user-icon:hover {
-    border: 2px solid #bbbbbb;
+    border: 0.5px solid @high;
 }
 
 .login-dialog-banner {
     font-size: 10pt;
     font-weight: 100;
     text-align: center;
-    color: #666666;
+    color: red;
     padding-bottom: 1em;
 }
 
 .login-dialog-title {
     font-size: 14pt;
     font-weight: 100;
-    color: #666666;
+    color: yellow;
     padding-bottom: 2em;
 }
 
@@ -66,28 +66,31 @@
 }
 
 .login-dialog-user-list:expanded .login-dialog-user-list-item {
-    color: #bfbfbf;
+    // color: purple;
+    // color: #bfbfbf;
 }
 
 .login-dialog-user-list-item,
 .login-dialog-user-list-item:hover .login-dialog-user-list-item-name,
 .login-dialog-user-list:expanded .login-dialog-user-list-item:focus .login-dialog-user-list-item-name,
 .login-dialog-user-list:expanded .login-dialog-user-list-item:logged-in {
-    color: #bfbfbf;
-    text-shadow: black 0px 2px 2px;
+    // color: red;
+    // color: #bfbfbf;
+    // text-shadow: black 0px 2px 2px;
 }
 
 .login-dialog-user-list-item:hover {
-    background-color: rgba(255,255,255,0.1);
+    // background-color: rgba(255,255,255,0.1);
+    // background-color: cyan;
 }
 
 .login-dialog-user-list:expanded .login-dialog-user-list-item:focus {
-    background-color: rgba(255,255,255,0.33);
+    // background-color: rgba(255,255,255,0.33);
 }
 
 .login-dialog-user-list:expanded .login-dialog-user-list-item:logged-in {
-    background-image: url("assets/logged-in-indicator.svg");
-    background-size: contain;
+    // background-image: url("assets/logged-in-indicator.svg");
+    // background-size: contain;
 }
 
 .login-dialog-user-list-item-text-box {
@@ -135,7 +138,7 @@
     font-weight: 100;
     text-align: left;
     padding-left: 15px;
-    text-shadow: black 0px 4px 3px 0px;
+    color: red;
 }
 
 .login-dialog-prompt-layout {
@@ -146,8 +149,9 @@
 }
 
 .login-dialog-prompt-label {
-    color: #eeeeee;
+    color: @texten;
     font-size: 14px;
+    font-weight: 100;
     padding-top: 11px;
 }
 
@@ -172,43 +176,60 @@
     spacing: 3px;
 }
 
+
+
+
+
+
+// See buttons.less
+
 .login-dialog .modal-dialog-button {
-    border-radius: 2px;
-    padding: 3px 18px;
+    // border-radius: 2px;
+    // padding: 3px 18px;
 }
 
 .login-dialog .modal-dialog-button:focus {
-    padding: 2px 17px;
+    // padding: 2px 17px;
 }
 
 .login-dialog .modal-dialog-button:default {
-    background-gradient-start: #6793c4;
-    background-gradient-end: #335d8f;
-    background-gradient-direction: vertical;
-    border-color: #16335d;
+    // background-gradient-start: #6793c4;
+    // background-gradient-end: #335d8f;
+    // background-gradient-direction: vertical;
+    // border-color: #16335d;
+    // background: @warn;
+    // border: 1px solid purple;
 }
 
 .login-dialog .modal-dialog-button:default:focus {
-    border: 2px solid #377fe7;
+    // border: 2px solid #377fe7;
 }
 
 .login-dialog .modal-dialog-button:default:hover {
-    background-gradient-start: #74a0d0;
-    background-gradient-end: #436d9f;
+    // background: magenta;
+    // background-gradient-start: #74a0d0;
+    // background-gradient-end: #436d9f;
 }
 
 .login-dialog .modal-dialog-button:default:active,
 .login-dialog .modal-dialog-button:default:pressed {
-    background-gradient-start: #436d9f;
-    background-gradient-end: #74a0d0;
+    // background: cyan;
+    // background-gradient-start: #436d9f;
+    // background-gradient-end: #74a0d0;
 }
 
 .login-dialog .modal-dialog-button:default:insensitive {
-    border-color: #666666;
-    color: #9f9f9f;
-    background-gradient-direction: none;
-    background-color: rgba(102, 102, 102, 0.15);
+    // border-color: #666666;
+    // color: #9f9f9f;
+    // background-gradient-direction: none;
+    // background-color: rgba(102, 102, 102, 0.15);
 }
+
+
+
+
+
+
 
 .login-dialog-message {
     padding-top: 4px;
@@ -217,19 +238,19 @@
 }
 
 .login-dialog-message-warning {
-    color: orange;
+    color: @warn;
 }
 
 .login-dialog-message-hint {
     padding-top: 0px;
     padding-bottom: 20px;
+    font-weight: 100;
 }
 
 .user-widget-label {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 100;
     text-align: left;
     padding-left: 18px;
-    color:white;
-    text-shadow: black 0px 4px 3px 0px;
+    color: @text;
 }

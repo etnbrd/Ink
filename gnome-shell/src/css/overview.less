@@ -112,28 +112,23 @@
 }
 
 .messages-indicator {
-    color: #999999;
+    color: @text;
     height: 32px;
 }
 
 .messages-indicator-contents {
     spacing: 12px;
     padding-bottom: 12px;
-}
+    font-weight: 100;
 
-.messages-indicator-contents:hover {
-    color: white;
-    text-shadow: black 0px 2px 2px;
+    &:hover {
+        color: white;
+    }
 }
 
 .messages-indicator-highlight {
-    // background-gradient-start: transparent;
-    // background-gradient-end: #999999;
-    // background-gradient-direction: vertical;
-
-    background: red;
-
-    height: 6px;
+    background: @high;
+    height: 0.5px;
 }
 
 
