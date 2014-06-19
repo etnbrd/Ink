@@ -11,8 +11,8 @@ Designed with fast and easy customization in mind.**
 
 ---
 
-This is a work in progress.
-Use it at your convenience, and please flood me with bug reports :)
+This is a work in progress.  
+Use it at your convenience, and please flood me with bug reports :)  
 See below for customization and installation instructions.
 
 **Includes** :
