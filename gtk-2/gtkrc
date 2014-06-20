@@ -1,5 +1,5 @@
 gtk-toolbar-icon-size = large-toolbar
-gtk-color-scheme = "base_color:<<colors.C07.hex()>>\nbg_color:#FAFAFA\ntooltip_bg_color:<<colors.C05.hex()>>\nselected_bg_color:<<colors.C11.hex()>>\ntext_color:<<colors.C00.hex()>>\nfg_color:#555555\ntooltip_fg_color:<<colors.C07.hex()>>\nselected_fg_color:<<colors.C07.hex()>>"
+gtk-color-scheme = "base_color:<<colors.C07.hex()>>\nbg_color:#FAFAFA\ntooltip_bg_color:<<colors.C05.hex()>>\nselected_bg_color:<<colors.C11.hex()>>\ntext_color:<<colors.C00.hex()>>\nfg_color:#555555\ntooltip_fg_color:<<colors.C07.hex()>>\nselected_fg_color:<<colors.C07.hex()>>\nlink_color:<<colors.C06.hex()>>\nvisited_link_color:<<colors.C05.hex()>>"
 gtk-icon-sizes = "panel-menu=16,16:panel=8,8:gtk-button=16,16:gtk-large-toolbar=24,24:gtk-small-toolbar=16,16"
 gtk-button-images	= 0
 gtk-menu-images	= 0					
@@ -177,8 +177,8 @@ style "default"
 
   GtkHTML::cite_color 				= @selected_bg_color 
 
-  GtkWidget::link-color = @selected_bg_color
-  GtkWidget::visited-link-color = shade (0.5, @selected_bg_color)
+  GtkWidget::link-color = @link_color
+  GtkWidget::visited-link-color = @visited_link_color
   #GtkWidget::cursor-aspect-ratio                = 0.05
   GtkWidget::focus-line-width                   = 0
   #GtkWidget::scroll-arrow-hlength               = 16
