@@ -11,8 +11,8 @@ Designed with fast and easy customization in mind.**
 
 ---
 
-This is a work in progress.
-Use it at your convenience, and please flood me with bug reports :)
+This is a work in progress.  
+Use it at your convenience, and please flood me with bug reports :)  
 See below for customization and installation instructions.
 
 **Includes** :
@@ -51,7 +51,7 @@ in my wildest dreams :
 # Customization and Installation
 
 This project is more than a set of themes.
-It's a tool to build multiple themes with a matching set of colors.
+It's a tool to automatically build multiple themes with a matching set of colors.
 
 1. modify the color scheme as you wish
 2. backup everything *(this theme replaces the default gnome-shell theme)*
@@ -62,7 +62,7 @@ It's a tool to build multiple themes with a matching set of colors.
 
 ### ligth modifications
 The colors and the themes to build are in the file `Ink.yml` in the root folder  
-An easy way to get a preview is to only build `colors` with `colors/src/index.html` open in your browser.
+An easy way to get a preview is to only build `colors` with `colors/src/index.html` open in your browser.  
 Modify, reload, appreciate, loop. 
 
 ### Hardcore modifications
@@ -79,9 +79,9 @@ template:
   - 'images.sh'
 
 ```
-The template engine modify these files from the theme root directory, and places them inside the `src` directory.
+The template engine modify these files from the theme root directory, and places them inside the `src` directory.  
 The `src` directory should contain the final theme to be installed.  
-The template files contain some refrence to the colors in `Ink.yml`, like this : `<<colors.C00.css()>>`.
+The template files contain some refrence to the colors in `Ink.yml`, like this : `<<colors.C00.css()>>`.  
 The template engine take the string inside the `<<>>`, execute it and place the result.
 
 ```
@@ -114,7 +114,7 @@ A command to refresh and enjoy immediatly the theme.
 
 ## 2. Backup
 
-**BACKUP, DO IT !**
+**BACKUP, DO IT !**  
 The gnome-shell theme will be completly erased.
 If this theme doesn't work, better be preperad :
 ```
@@ -124,9 +124,9 @@ cp -r theme theme.bkp
 
 ## 3. Build & Install
 
-`npm install`
-`sudo id && node build.js`
-For the moment, we need sudo privileges to install the theme, but the password prompt fails.
+`npm install`  
+`sudo id && node build.js`  
+For the moment, we need sudo privileges to install the theme, but the password prompt fails.  
 See build.js:80
 
 ## TODOS
@@ -134,16 +134,17 @@ See build.js:80
 + Fix the sudo shit (build.js:80)
 + To reload images in gnome-shell, need to do a Alt+F2 > rt
 
-This is a wide work in progress.
-I try to document as much as I can, but oftenly fail.
+This is a wide work in progress.  
+I try to document as much as I can, but oftenly fail.  
 Here are some comment, mainly for the gnome-shell theme :
 
-If there is a TODO, it needs review, and maybe modifications.
-If there is some hardcoded colors, it needs review.
-If something is commented, it might help you understand how I got to this solution.
-Some UI elements designs are just plain wrong css hacks because I don't want to modify the js from gnome-shell.
-Don't hesitate to send me complete refactoring pull requests, bug fixes, patches, or simply issues you notice.
++ If there is a TODO, it needs review, and maybe modifications.
++ If there is some hardcoded colors, it needs review.
++ If something is commented, it might help you understand how I got to this solution.
++ Some UI elements designs are just plain wrong css hacks because I don't want to modify the js from gnome-shell.
++ Don't hesitate to send me complete refactoring pull requests, bug fixes, patches, or simply issues you notice.  
 I will do my best to work it out.
+
 Thanks :)
 
 
