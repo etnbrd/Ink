@@ -1,7 +1,7 @@
 <!-- ![Ink](logo.png) -->
 
 <div id="container" style="text-align: center">
-    <img src="logo.png" alt="Ink"/>
+    <img src="logo.png" alt="Ink" width="700px"/>
 </div>
 
 ---
@@ -40,8 +40,9 @@ in my wildest dreams :
 
 ## Screens
 
-![Screenshot calendar](https://raw.github.com/etnbrd/Ink/master/screens/screen-calendar.png)
-![Screenshot system menu](https://raw.github.com/etnbrd/Ink/master/screens/screen-sys.png)
+![Screenshot calendar](https://raw.github.com/etnbrd/Ink/master/screens/prompt.png)
+![Screenshot system menu](https://raw.github.com/etnbrd/Ink/master/screens/features.png)
+![Screenshot system menu](https://raw.github.com/etnbrd/Ink/master/screens/overview.png)
 
 ## Dependencies
 
