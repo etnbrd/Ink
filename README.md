@@ -1,7 +1,7 @@
 <!-- ![Ink](logo.png) -->
 
 <div id="container" style="text-align: center">
-    <img src="logo.png" alt="Ink" width="700px"/>
+    <img src="logo.jpg" alt="Ink" width="700px"/>
 </div>
 
 ---
