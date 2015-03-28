@@ -1,30 +1,22 @@
-
 /* Login Dialog */
 
 .framed-user-icon {
-    border: 0.5px solid @text;
-    border-radius: 200px;
+    border: 2px solid #8b8b8b;
+    border-radius: 3px;
     background-size: contain;
 }
 
 .framed-user-icon:hover {
-    border: 0.5px solid @high;
+    border: 2px solid #bbbbbb;
 }
 
 .login-dialog-banner {
     font-size: 10pt;
-    font-weight: 100;
+    font-weight: bold;
     text-align: center;
-    color: red;
+    color: #666666;
     padding-bottom: 1em;
 }
-
-/*.login-dialog-title {
-    font-size: 14pt;
-    font-weight: 100;
-    color: yellow;
-    padding-bottom: 2em;
-}*/
 
 .login-dialog {
     /* Reset border and background */
@@ -47,8 +39,10 @@
 }
 
 .login-dialog-user-list-item {
-    border-radius: 2px;
+    border-radius: 5px;
     padding: .2em;
+    color: #bfbfbf;
+    text-shadow: black 0px 2px 2px;
 }
 
 .login-dialog-user-list-item:ltr {
@@ -58,43 +52,18 @@
 .login-dialog-user-list-item:rtl {
     padding-left: 1em;
 }
-/*
-.login-dialog-user-list-item .login-dialog-user-list-item-name {
-    font-size: 20px;
-    padding-left: 18px;
-    font-weight: 100;
-}
 
-.login-dialog-user-list:expanded .login-dialog-user-list-item {
-    // color: purple;
-    // color: #bfbfbf;
-}
-
-.login-dialog-user-list-item,
-.login-dialog-user-list-item:hover .login-dialog-user-list-item-name,
-.login-dialog-user-list:expanded .login-dialog-user-list-item:focus .login-dialog-user-list-item-name,
-.login-dialog-user-list:expanded .login-dialog-user-list-item:logged-in {
-    // color: red;
-    // color: #bfbfbf;
-    // text-shadow: black 0px 2px 2px;
-}
-*/
 .login-dialog-user-list-item:hover {
-    // background-color: rgba(255,255,255,0.1);
-    // background-color: cyan;
+    background-color: rgba(255,255,255,0.1);
 }
 
 .login-dialog-user-list:expanded .login-dialog-user-list-item:focus {
-    // background-color: rgba(255,255,255,0.33);
+    background-color: rgba(255,255,255,0.33);
 }
 
 .login-dialog-user-list:expanded .login-dialog-user-list-item:logged-in {
-    // background-image: url("assets/logged-in-indicator.svg");
-    // background-size: contain;
-}
-
-.login-dialog-user-list-item-text-box {
-    padding: 0 0.5em;
+    background-image: url("logged-in-indicator.svg");
+    background-size: contain;
 }
 
 .login-dialog-user-list-item .login-dialog-timed-login-indicator {
@@ -106,16 +75,9 @@
     background-color: #8b8b8b;
 }
 
-.login-dialog-user-list-item-icon {
-    border: 2px solid #8b8b8b;
-    border-radius: 2px;
-    width: 64px;
-    height: 64px;
-}
-
 .login-dialog-not-listed-label {
     font-size: 10.5pt;
-    font-weight: 100;
+    font-weight: bold;
     color: #666666;
     padding-top: 1em;
 }
@@ -133,12 +95,13 @@
     color: #E8E8E8;
 }
 
-.login-dialog-username {
+.login-dialog-username,
+.user-widget-label {
     font-size: 16pt;
-    font-weight: 100;
+    font-weight: bold;
     text-align: left;
     padding-left: 15px;
-    color: red;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 2px 1px 0px;
 }
 
 .login-dialog-prompt-layout {
@@ -149,9 +112,8 @@
 }
 
 .login-dialog-prompt-label {
-    color: @texten;
+    color: #eeeeee;
     font-size: 14px;
-    font-weight: 100;
     padding-top: 11px;
 }
 
@@ -177,60 +139,43 @@
     spacing: 3px;
 }
 
-
-
-
-
-
-// See buttons.less
-
 .login-dialog .modal-dialog-button {
-    // border-radius: 2px;
-    // padding: 3px 18px;
+    border-radius: 5px;
+    padding: 3px 18px;
 }
 
 .login-dialog .modal-dialog-button:focus {
-    // padding: 2px 17px;
+    padding: 2px 17px;
 }
 
 .login-dialog .modal-dialog-button:default {
-    // background-gradient-start: #6793c4;
-    // background-gradient-end: #335d8f;
-    // background-gradient-direction: vertical;
-    // border-color: #16335d;
-    // background: @warn;
-    // border: 1px solid purple;
+    background-gradient-start: #6793c4;
+    background-gradient-end: #335d8f;
+    background-gradient-direction: vertical;
+    border-color: #16335d;
 }
 
 .login-dialog .modal-dialog-button:default:focus {
-    // border: 2px solid #377fe7;
+    border: 2px solid #377fe7;
 }
 
 .login-dialog .modal-dialog-button:default:hover {
-    // background: magenta;
-    // background-gradient-start: #74a0d0;
-    // background-gradient-end: #436d9f;
+    background-gradient-start: #74a0d0;
+    background-gradient-end: #436d9f;
 }
 
 .login-dialog .modal-dialog-button:default:active,
 .login-dialog .modal-dialog-button:default:pressed {
-    // background: cyan;
-    // background-gradient-start: #436d9f;
-    // background-gradient-end: #74a0d0;
+    background-gradient-start: #436d9f;
+    background-gradient-end: #74a0d0;
 }
 
 .login-dialog .modal-dialog-button:default:insensitive {
-    // border-color: #666666;
-    // color: #9f9f9f;
-    // background-gradient-direction: none;
-    // background-color: rgba(102, 102, 102, 0.15);
+    border-color: #666666;
+    color: #9f9f9f;
+    background-gradient-direction: none;
+    background-color: rgba(102, 102, 102, 0.15);
 }
-
-
-
-
-
-
 
 .login-dialog-message {
     padding-top: 4px;
@@ -239,19 +184,21 @@
 }
 
 .login-dialog-message-warning {
-    color: @warn;
+    color: orange;
 }
 
 .login-dialog-message-hint {
     padding-top: 0px;
     padding-bottom: 20px;
-    font-weight: 100;
 }
 
 .user-widget-label {
-    font-size: 20px;
-    font-weight: 100;
-    text-align: left;
+}
+
+.user-widget-label:ltr {
     padding-left: 18px;
-    color: @text;
+}
+
+.user-widget-label:rtl {
+    padding-right: 18px;
 }

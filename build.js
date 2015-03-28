@@ -39,12 +39,10 @@ function _less(path, name, dest, cb) {
 		dest = name.replace(re.exec(name), ".css");
 	}
 
-	var parser = new(require('less').Parser)({
+	require('less').render(file, {
 	  paths: [path + '/'], // Specify search paths for @import directives
 	  filename: name // Specify a filename, for better error messages
-	});
-
-	parser.parse(file, function (e, tree) {
+	}, function (e, tree) {
 
 		if (e) {
 			console.error('\x1B[31m>>\x1B[39m ' + e.message);
@@ -60,7 +58,7 @@ function _less(path, name, dest, cb) {
 		  fs.writeFileSync(path + '/' + dest, css);
 		  cb(null, "less done"); // TODO unsync the writeFile.
 		}
-	});
+	})
 }
 
 
